@@ -1,0 +1,4 @@
+file://./log.owl#schematicRelation_106 a file://./log.owl#Departure
+file://./log.owl#schematicRelation_108 a file://./log.owl#Approach
+file://./log.owl#schematicRelation_108 file://./log.owl#hasParticipant file://./log.owl#dog_13
+file://./log.owl#schematicRelation_106 file://./log.owl#hasParticipant file://./log.owl#person_16

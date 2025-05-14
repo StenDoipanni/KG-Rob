@@ -1,0 +1,4 @@
+fred:man_1 owl:sameAs kh:person_16 .
+fred:lion_1 owl:sameAs kh:dog_13 .
+fred:schematicRelation_106 owl:sameAs fred:edge_1 .
+fred:schematicRelation_108 owl:sameAs fred:catch_1 .

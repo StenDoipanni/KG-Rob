@@ -1,0 +1,30 @@
+@prefix kh: <file://./log.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kh:hasId a owl:DatatypeProperty .
+
+kh:hasParticipant a owl:ObjectProperty .
+
+kh:image_0 a kh:Image,
+        owl:NamedIndividual ;
+    kh:hasId "25.88"^^xsd:string .
+
+kh:schematicRelation_106 a kh:Departure,
+        owl:NamedIndividual ;
+    kh:eventMode kh:Ended ;
+    kh:hasParticipant kh:dog_13,
+        kh:person_16 .
+
+kh:schematicRelation_108 a kh:Approach,
+        owl:NamedIndividual ;
+    kh:eventMode kh:Started ;
+    kh:hasParticipant kh:dog_13,
+        kh:person_16 .
+
+kh:dog_13 a kh:dog,
+        owl:NamedIndividual .
+
+kh:person_16 a kh:person,
+        owl:NamedIndividual .
+

@@ -1,0 +1,14 @@
+Based on the information provided in the original_graph and new_graph, the following triples should be added using the owl:sameAs property to align entities referring to the same things:
+
+fred:man_1 owl:sameAs kh:person_16 .
+fred:lion_1 owl:sameAs kh:dog_13 .
+fred:schematicRelation_106 owl:sameAs fred:edge_1 .
+fred:schematicRelation_108 owl:sameAs fred:catch_1 .
+
+The person_16 in the original_graph refers to the same entity as man_1 in the new_graph.
+
+The dog_13 in the original_graph is actually referring to the same lion entity as lion_1 in the new_graph, despite being typed as a dog originally. 
+
+The schematicRelation_106 of type Departure in the original_graph maps to the edge_1 event in the new graph.
+
+And the schematicRelation_108 of type Approach in the original_graph corresponds to the catch_1 event in the new_graph.

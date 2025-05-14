@@ -1,0 +1,87 @@
+@prefix kh: <file://./log.owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix pb: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix verbatlas: <http://verbatlas.org/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix en: <file://./log_enriched.owl#> .
+
+# Implied Future Events
+en:lionWakingUp a dul:Situation ;
+    en:hasParticipant kh:dog_13 ;
+    rdfs:comment "The lion might wake up at any moment" .
+
+en:lionAttacking a dul:Situation ;
+    en:hasParticipant kh:dog_13, kh:person_16 ;
+    en:follows en:lionWakingUp ;
+    rdfs:comment "The lion might attack the man if it wakes up" .
+
+en:manEscapingCage a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    rdfs:comment "The man may attempt to escape from the cage" .
+
+en:hasParticipant a owl:ObjectProperty .
+en:follows a owl:ObjectProperty .
+
+# Potentially Dangerous Implied Future Events
+en:lionAttacking en:introducesDanger "true"^^xsd:boolean ;
+    en:dangerLevel "high"^^xsd:string ;
+    en:threatensEntity kh:person_16 .
+
+en:manStumblingBackward a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:introducesDanger "true"^^xsd:boolean ;
+    en:dangerLevel "medium"^^xsd:string ;
+    rdfs:comment "The man might stumble while moving backward, drawing the lion's attention" .
+
+en:introducesDanger a owl:DatatypeProperty .
+en:dangerLevel a owl:DatatypeProperty .
+en:threatensEntity a owl:ObjectProperty .
+
+# Danger Avoidance Actions
+en:manMaintainingDistance a dul:Situation ;
+    en:hasParticipant kh:person_16, kh:dog_13 ;
+    en:isDangerAvoidanceAction "true"^^xsd:boolean ;
+    en:preventsEvent en:lionAttacking ;
+    rdfs:comment "The man should maintain a safe distance from the lion" .
+
+en:manMovingSlowly a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction "true"^^xsd:boolean ;
+    en:preventsEvent en:lionWakingUp ;
+    rdfs:comment "The man should move slowly and quietly to avoid waking the lion" .
+
+en:manExitingCageCarefully a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction "true"^^xsd:boolean ;
+    en:preventsEvent en:lionAttacking ;
+    rdfs:comment "The man should exit the cage carefully without making sudden movements" .
+
+en:isDangerAvoidanceAction a owl:DatatypeProperty .
+en:preventsEvent a owl:ObjectProperty .
+
+# Risk Reduction Reactions
+en:manUsingShieldForProtection a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:usesObject fred:object_1 ;
+    en:hasRiskReductionValue 0.7 ;
+    rdfs:comment "The man could use the large, flat object as a shield to protect himself if the lion attacks" .
+
+en:manPushingShieldAgainstLion a dul:Situation ;
+    en:hasParticipant kh:person_16, kh:dog_13 ;
+    en:usesObject fred:object_1 ;
+    en:hasRiskReductionValue 0.6 ;
+    rdfs:comment "The man could push the shield against the lion to create distance if attacked" .
+
+en:manCallingForHelp a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:hasRiskReductionValue 0.4 ;
+    rdfs:comment "The man could call for help from other circus staff" .
+
+en:hasRiskReductionValue a owl:DatatypeProperty .
+en:usesObject a owl:ObjectProperty .

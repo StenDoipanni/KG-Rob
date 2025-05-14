@@ -1,0 +1,167 @@
+
+You are given a set of RDF triples, a context in natural language, and a list of fundamental Action / Motion affordances.
+The context is the description of a scenario with ongoing events, participants, etc.
+The triples describe complex situations related to the context.
+The list of Action / Motion affordances are potential actions and motion types to be used to ground complex situations.
+
+The RDF triples are about:
+1. Implied Future Events
+2. Potentially Dangerous Implied Future Events
+3. Danger Avoidance Actions
+4. Risk Reduction Reactions
+
+Your task is to introduce new triples, grounding the complex dul:Situation(s) in the triples, according to the Action / Motion types.
+Use the @prefix "rs" for <file://./log_recommender_system.owl#> .
+
+
+Example:
+Context:
+
+```
+A man running from a police man.
+```
+
+Triples:
+```
+ns3:ForcefulArrest a dul:Situation ;
+    ns3:hasParticipant kh:person_16 ;
+    ns3:hasParticipant kh:officer_1 .
+```
+
+
+Action / Motion types:
+
+```
+Contact : an entity touches another entity
+Containment : an entity contains another entity
+Cutting : an entity cuts another entity
+```
+
+
+Grounding:
+```
+ns3:ForcefulArrest a dul:Situation ;
+    rs:requires kh:Containment , kh:Contact .
+
+kh:person_16 dul:hasRole kh:Contained , kh:Contacted.
+kh:officer_1 dul:hasRole kh:Contacter .
+```
+
+Proceed with the task given the follwing Context, Triples, and Action / Motion types.
+IMPORTANT: Do not write anything else other then the triples.
+
+Context:
+```
+Inside a barred circus cage, a man—clearly the Tramp character played by Charlie Chaplin (agent)—is caught in a moment of intense comedic tension as he holds a large, flat object like a shield (instrument) between himself and a full-grown lion (theme) lying on the floor just feet away. The man's wide-eyed expression and stiff posture convey alarm and desperation as he edges backward, clearly aware of the imminent danger. Despite the threat, the lion remains completely still, its eyes closed, resting its massive head on its paws in a pose of total indifference. The man's defensive stance and panicked energy are in stark contrast to the lion's calm, creating a powerful visual irony central to the comedy.
+````
+
+Triples:
+```
+en:manCallingForHelp a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:hasRiskReductionValue 0.4 ;
+    rdfs:comment "The man could call for help from other circus staff" .
+
+en:manEscapingCage a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    rdfs:comment "The man may attempt to escape from the cage" .
+
+en:manExitingCageCarefully a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionAttacking ;
+    rdfs:comment "The man should exit the cage carefully without making sudden movements" .
+
+en:manMaintainingDistance a dul:Situation ;
+    en:hasParticipant kh:dog_13,
+        kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionAttacking ;
+    rdfs:comment "The man should maintain a safe distance from the lion" .
+
+en:manMovingSlowly a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionWakingUp ;
+    rdfs:comment "The man should move slowly and quietly to avoid waking the lion" .
+
+en:manPushingShieldAgainstLion a dul:Situation ;
+    en:hasParticipant kh:dog_13,
+        kh:person_16 ;
+    en:hasRiskReductionValue 0.6 ;
+    en:usesObject fred:object_1 ;
+    rdfs:comment "The man could push the shield against the lion to create distance if attacked" .
+
+en:manStumblingBackward a dul:Situation ;
+    en:dangerLevel "medium"^^xsd:string ;
+    en:hasParticipant kh:person_16 ;
+    en:introducesDanger true ;
+    rdfs:comment "The man might stumble while moving backward, drawing the lion's attention" .
+
+en:manUsingShieldForProtection a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:hasRiskReductionValue 0.7 ;
+    en:usesObject fred:object_1 ;
+    rdfs:comment "The man could use the large, flat object as a shield to protect himself if the lion attacks" .
+
+en:lionAttacking a dul:Situation ;
+    en:dangerLevel ""high""^^xsd:string ;
+    en:follows en:lionWakingUp ;
+    en:hasParticipant kh:dog_13, kh:person_16 ;
+    en:introducesDanger true ;
+    en:threatensEntity kh:person_16 ;
+    rdfs:comment "The lion might attack the man if it wakes up" ."
+
+"en:lionWakingUp a dul:Situation ;
+    en:hasParticipant kh:dog_13 ;
+    rdfs:comment "The lion might wake up at any moment" ."
+```
+
+
+Action / Motion types:
+```
+Contact : An image schematic situation in which two physical objects have overlapping boundaries.
+Linkage : An image schematic relation in which two objects are connected in such a way that they are constrained to move together.
+Movement : An image schematic relation describing the movement of some objects relative to each other.
+    Approach : An object approaches another.
+    Departure : An object moves away from another.
+    Stillness : Two objects are in relative stillness to each other.
+    VerticalMovement : An object's movement has a significant vertical component.
+        Falling : An object's movement has a significant downward component.
+        Rising : An object's movement has a significant upward component.
+Occlusion : An image schematic relation in which one object (the occluder) is, relative to the observer, in front of another object (the occludee). Thus, the occluder object prevents, at least partially, the occludee object from being seen by the observer.
+Penetration : An image schematic relation describing that an object (the penetrator) has come to occupy some region of space that used to belong to, or is partially enclosed by, another object (the penetree).
+Support : A schematic relation describing that an object (the supporter) prevents the falling of another object (the supportee).
+```
+
+Roles:
+```
+Contacter : A role played by an object in contact with some other one.
+LinkedObject : A role played by an object attached to something else.
+Occludee : A role played by an object with lines of sight to some observer being blocked by some other object.
+Occluder : A role played by an object which blocks an observer's line of sight to some other object.
+Penetrator : A role played by an object that is inserted into a spatial region that belonged to or is functionally controlled by another object.
+Penetree : A role played by an object whose spatial region or functionally controlled spatial region is being overlapped by some other object.
+Supportee : A role played by an object prevented from falling by something else.
+Supporter : A role played by an object which prevents the fall of something else.
+Trajector : A role played by an object in motion.
+    Approacher : A role played by an object moving towards something.
+    Departer : A role played by an object moving away from something.
+```
+
+Properties:
+```
+hasParticipant (to be used when no specific relation exists)
+hasOccludee
+hasOccluder
+hasPenetrator
+hasPenetree
+hasSupportee
+hasSupporter
+hasTrajector
+    hasApproacher
+    hasDeparter
+```
+
+
+Grounding:
