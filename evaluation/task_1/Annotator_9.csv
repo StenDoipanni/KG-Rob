@@ -1,0 +1,57 @@
+Context Description,Image,,,
+"Inside a barred circus cage, a man—clearly the Tramp character played by Charlie Chaplin (agent)—is caught in a moment of intense comedic tension as he holds a large, flat object like a shield (instrument) between himself and a full-grown lion (theme) lying on the floor just feet away. The man's wide-eyed expression and stiff posture convey alarm and desperation as he edges backward, clearly aware of the imminent danger. Despite the threat, the lion remains completely still, its eyes closed, resting its massive head on its paws in a pose of total indifference. The man's defensive stance and panicked energy are in stark contrast to the lion's calm, creating a powerful visual irony central to the comedy.",,,,
+Annotation Examples:,"""The man tries to force the cage door"" --> 7 (it is a fairly plausible event, given current context) 
+""The man decides to eat some soup"" --> 2 (it could happen, but it is not the most plausible event happening, given current context)","en:ManEatingSoup en:isDangerAvoidanceAction true --> 1 (the situation for which the man starts eating some soup DOES NOT avoid danger)
+en:manPokingTheLion en:introducesDanger true --> 7 (it is true that, the action of poking the lion introduces danger for the man)","en:ManEatingSoup en:riskReductionValue 0.9 --> 1 (the situation for which the man starts eating some soup DOES NOT reduce risk)
+en:manPokingTheLion en:dangerLevel ""high"" --> 7 (it is true that, the action of poking the lion is dangerous for the man)","en:ManEatingSoup en:preventsEvent en:LionAttacking --> 2 (the situation for which the man starts eating some soup would probably NOT prevent the lion from attacking him)
+en:manPokingTheLion en:precedsEvent en:LionWakingUp--> 6 (it is probable that, the action of poking the lion precedes the lion waking up)"
+The dimensions to be evaluated are:,Appropriateness wrt Context,Risk Introduction,Risk Score Plausibility,Events Dependancy Plausibility
+"en:manCallingForHelp a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:hasRiskReductionValue 0.4 ;
+    rdfs:comment ""The man could call for help from other circus staff"" .",6,NaN,5,NaN
+"en:manEscapingCage a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    rdfs:comment ""The man may attempt to escape from the cage"" .",7,NaN,NaN,NaN
+"en:manExitingCageCarefully a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionAttacking ;
+    rdfs:comment ""The man should exit the cage carefully without making sudden movements"" .",6,3,NaN,6
+"en:manMaintainingDistance a dul:Situation ;
+    en:hasParticipant kh:dog_13,
+        kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionAttacking ;
+    rdfs:comment ""The man should maintain a safe distance from the lion"" .",5,3,NaN,6
+"en:manMovingSlowly a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionWakingUp ;
+    rdfs:comment ""The man should move slowly and quietly to avoid waking the lion"" .",5,2,NaN,6
+"en:manPushingShieldAgainstLion a dul:Situation ;
+    en:hasParticipant kh:dog_13,
+        kh:person_16 ;
+    en:hasRiskReductionValue 0.6 ;
+    en:usesObject fred:object_1 ;
+    rdfs:comment ""The man could push the shield against the lion to create distance if attacked"" .",3,NaN,3,NaN
+"en:manStumblingBackward a dul:Situation ;
+    en:dangerLevel ""medium""^^xsd:string ;
+    en:hasParticipant kh:person_16 ;
+    en:introducesDanger true ;
+    rdfs:comment ""The man might stumble while moving backward, drawing the lion's attention"" .",6,6,7,NaN
+"en:manUsingShieldForProtection a dul:Situation ;
+    en:hasParticipant kh:person_16 ;
+    en:hasRiskReductionValue 0.7 ;
+    en:usesObject fred:object_1 ;
+    rdfs:comment ""The man could use the large, flat object as a shield to protect himself if the lion attacks"" .",6,NaN,3,NaN
+"en:lionAttacking a dul:Situation ;
+    en:dangerLevel ""high""^^xsd:string ;
+    en:follows en:lionWakingUp ;
+    en:hasParticipant kh:dog_13, kh:person_16 ;
+    en:introducesDanger true ;
+    en:threatensEntity kh:person_16 ;
+    rdfs:comment ""The lion might attack the man if it wakes up"" .",6,7,7,6
+"en:lionWakingUp a dul:Situation ;
+    en:hasParticipant kh:dog_13 ;
+    rdfs:comment ""The lion might wake up at any moment"" .",6,NaN,NaN,NaN

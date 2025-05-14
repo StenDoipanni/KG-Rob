@@ -1,0 +1,91 @@
+Context Description,Image,,
+"Inside a barred circus cage, a man—clearly the Tramp character played by Charlie Chaplin (agent)—is caught in a moment of intense comedic tension as he holds a large, flat object like a shield (instrument) between himself and a full-grown lion (theme) lying on the floor just feet away. The man's wide-eyed expression and stiff posture convey alarm and desperation as he edges backward, clearly aware of the imminent danger. Despite the threat, the lion remains completely still, its eyes closed, resting its massive head on its paws in a pose of total indifference. The man's defensive stance and panicked energy are in stark contrast to the lion's calm, creating a powerful visual irony central to the comedy.",,,"""You are asked to evaluate the triples in column ""Situation"" according to different dimensions, on a Likert scale 1-7.
+The dimensions to be evaluated are:
+
+Class Grounding: the purpose is to evaluate the LLM's capability to align enitities to Khafre class.
+Is the alignement to a certain Khafre class coherent with theory and plausible? 1: completely hallucinated, 7: perfectly adequate and plausible
+
+Example given current Context Descriprion and Image:
+""""Running from Lion requires Movement, Departing"""" --> 7 (the action of running from the lion implies some other Moving, and Departing actions) 
+
+Role Grounding:  the purpose is to evaluate the LLM's capability to align enitities to Khafre roles.
+Is the alignement to a certain Khafre role coherent with theory and plausible? 1: completely hallucinated, 7: perfectly adequate and plausible
+
+Example given current Context Descriprion and Image:
+kh:person_16 dul:hasRole en:aggressor --> 1 (role is both wrong since it is not in the original pool, and the man is not the aggressor vs the lion)
+en:person_16 dul:hasRole en:Trajector --> 7 (in the context of running aeay from the lion, the man has the role of a trajector)"""
+Annotation Examples:,"""Running from Lion requires Movement, Departing"" --> 7 (the action of running from the lion implies some other Moving, and Departing actions) ","kh:person_16 dul:hasRole en:aggressor --> 1 (role is wrong in two ways: 1) it is not in the original pool, and 2) the person is not the aggressor, as the lion would be)
+en:person_16 dul:hasRole en:Trajector --> 7 (in the context of running away from the lion, the man has the role of a trajector)",
+The dimensions to be evaluated are:,Class Grounding,Role Grounding,
+"en:manCallingForHelp a dul:Situation ;
+    rs:requires kh:Contact ;
+    en:hasParticipant kh:person_16 .
+
+kh:person_16 dul:hasRole kh:Contacter .",1,7,
+"en:manEscapingCage a dul:Situation ;
+    rs:requires kh:Movement, kh:Departure ;
+    en:hasParticipant kh:person_16 .
+
+kh:person_16 dul:hasRole kh:Trajector, kh:Departer .",7,7,
+"en:manExitingCageCarefully a dul:Situation ;
+    rs:requires kh:Movement, kh:Departure ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionAttacking .
+
+kh:person_16 dul:hasRole kh:Trajector, kh:Departer .",7,7,
+"en:manMaintainingDistance a dul:Situation ;
+    rs:requires kh:Movement, kh:Stillness ;
+    en:hasParticipant kh:dog_13, kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionAttacking .
+
+kh:person_16 dul:hasRole kh:Trajector .
+kh:dog_13 dul:hasRole kh:Trajector .",7,7,
+"en:manMovingSlowly a dul:Situation ;
+    rs:requires kh:Movement ;
+    en:hasParticipant kh:person_16 ;
+    en:isDangerAvoidanceAction true ;
+    en:preventsEvent en:lionWakingUp .
+
+kh:person_16 dul:hasRole kh:Trajector .",7,7,
+"en:manPushingShieldAgainstLion a dul:Situation ;
+    rs:requires kh:Contact, kh:Movement, kh:Approach ;
+    en:hasParticipant kh:dog_13, kh:person_16 ;
+    en:hasRiskReductionValue 0.6 ;
+    en:usesObject fred:object_1 .
+
+kh:person_16 dul:hasRole kh:Contacter, kh:Trajector, kh:Approacher .
+fred:object_1 dul:hasRole kh:Contacter .
+kh:dog_13 dul:hasRole kh:Contacter .",7,5,
+"en:manStumblingBackward a dul:Situation ;
+    rs:requires kh:Movement, kh:Departure, kh:Falling ;
+    en:dangerLevel ""medium""^^xsd:string ;
+    en:hasParticipant kh:person_16 ;
+    en:introducesDanger true .
+
+kh:person_16 dul:hasRole kh:Trajector, kh:Departer .",7,7,
+"en:manUsingShieldForProtection a dul:Situation ;
+    rs:requires kh:Occlusion, kh:Support ;
+    en:hasParticipant kh:person_16 ;
+    en:hasRiskReductionValue 0.7 ;
+    en:usesObject fred:object_1 .
+
+kh:person_16 dul:hasRole kh:Supportee .
+fred:object_1 dul:hasRole kh:Occluder, kh:Supporter .
+kh:dog_13 dul:hasRole kh:Occludee .",4,3,
+"en:lionAttacking a dul:Situation ;
+    rs:requires kh:Movement, kh:Approach, kh:Contact, kh:Penetration ;
+    en:dangerLevel ""high""^^xsd:string ;
+    en:follows en:lionWakingUp ;
+    en:hasParticipant kh:dog_13, kh:person_16 ;
+    en:introducesDanger true ;
+    en:threatensEntity kh:person_16 .
+
+kh:dog_13 dul:hasRole kh:Trajector, kh:Approacher, kh:Contacter, kh:Penetrator .
+kh:person_16 dul:hasRole kh:Penetree .",7,7,
+"en:lionWakingUp a dul:Situation ;
+    rs:requires kh:Movement, kh:Rising ;
+    en:hasParticipant kh:dog_13 .
+
+kh:dog_13 dul:hasRole kh:Trajector .",7,7,
