@@ -3938,7 +3938,7 @@ Triples:
             The graph with added Wikidata links
         """
         # Use the provided database file path
-        db_file_name = '/home/stefano/isws2025/implementation/spring_khafre/index_enwiki-latest.db'
+        db_file_name = './spring_khafre_2/index_enwiki-latest.db'
         
         if not os.path.isfile(db_file_name):
             logger.warning(f"Wikidata index file not found at {db_file_name}, skipping linking")
