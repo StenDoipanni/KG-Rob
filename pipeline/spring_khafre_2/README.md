@@ -1,4 +1,8 @@
-# SPRING
+
+The following is a rework of the cloned SPRING repository, from La Sapienza. All the original materials can be found at their GitHub repo: [SPRING](https://github.com/SapienzaNLP/spring)
+
+
+## SPRING
 
 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/one-spring-to-rule-them-both-symmetric-amr/amr-parsing-on-ldc2017t10)](https://paperswithcode.com/sota/amr-parsing-on-ldc2017t10?p=one-spring-to-rule-them-both-symmetric-amr)
