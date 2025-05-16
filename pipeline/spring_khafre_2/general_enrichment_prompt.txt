@@ -1,0 +1,68 @@
+Task:
+Your goal is to extend a knowledge graph KG with more knowledge that can be assumed from a text T, but it is not explicit.
+Using the elements of KG, as well as PropBank, WordNet and other graph elements as anchoring points, add any further elements you need to extract implicit knowledge about:
+1. Implied Future Events
+2. Potentially Dangerous Implied Future Events
+3. Danger Avoidance Actions
+4. Risk Reduction Reactions
+
+IMPORTANT: Your response MUST start with the following prefix declarations:
+@prefix kh: <file://./log.owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix pb: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix verbatlas: <http://verbatlas.org/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix en: <file://./log_enriched.owl#> .
+
+If you add further prefixes, make sure to declare them.
+
+Start with Implied Future Events. An implied future event happens when two events mentioned in a text have a causal dependence sequence; here are natural language inference examples:
+1) The car driver didn't notice the traffic light turns red. -> The car driver won't stop at the traffic light.
+Here is the rough triplification, you will be more precise and use KG nodes, PropBank, WordNet, and WikiData entities as anchor point:
+1) en:carDriver en:notStoppingAt en:TrafficLight .
+en:CarDriverStoppingAtTrafficLight a dul:Situation ; en:hasValue "False"^^xsd:boolean .
+en:CarDriverStoppingAtTrafficLight en:hasParticipant en:CarDriver .
+en:CarDriverStoppingAtTrafficLight en:hasParticipant en:TrafficLight .
+
+Add Implied Future Event triples to the KG considering the original text T.
+
+Proceed with Potentially Dangerous Implied Future Events. In some cases, an implied future event can be dangerous. Here are natural language inference examples:
+1) The car does not stop at traffic lights. There are pedestrian in the crosswalk. --> The people could be hit by the car.
+2) After checking the arrival of cars, the pedestrian is crossing on the crosswalk.
+Here is the rough triplification, you will be more precise and use KG nodes, PropBank, WordNet, and WikiData entities as anchor point:
+1) en:CarNotStopping en:introducesDanger "true"^^xsd:boolean .
+2) en:PedestrianCrossingOnCrosswalk en:isDangerous "false"^^xsd:boolean .
+
+Add Potentially Dangerous Implied Future Events triples to the KG considering the original text T and the Potentially Dangerous Implied Future Events.
+
+Add now Danger Avoidance Actions, namely the actions that should have happened to avoid the danger. 
+Here are natural language inference examples:
+1) The car does not stop at traffic lights. There are pedestrians in the crosswalk. --> The car should have stopped at the traffic light.
+Here is the rough triplification, you will be more precise and use KG nodes, PropBank, WordNet, and WikiData entities as anchor point:
+1) en:CarStopping en:isDangerAvoidanceAction "true"^^xsd:boolean .
+
+Add Danger Avoidance Actions triples to the KG considering the original text T and the Potentially Dangerous Implied Future Events.
+
+Finally, add Risk Reduction Reaction, namely the reactions that could happen, once the danger exists, to reduce the impact of the danger. Here are natural language inference examples:
+1) The car does not stop at traffic lights. There are pedestrians in the crosswalk. --> The pedestrians could quickly jump back to avoid the car.
+Here is the rough triplification, you will be more precise and use KG nodes, PropBank, WordNet, and WikiData entities as anchor point:
+1) en:PedestrianJumpingBack a dul:Situation ; en:hasRiskReductionValue 0.5 .
+en:PedestrianJumpingBack en:hasParticipant en:pedestrian .
+
+Add Risk Reduction Reactions triples to the KG considering the original text T and the Potentially Dangerous Implied Future Events.
+
+IMPORTANT: Print the newly generater triples only. Do not write anything else.
+If you introduce Datatype and Object properties add a triple declaring them as such.
+
+
+T:
+{{T}}
+
+KG:
+{{KG}}

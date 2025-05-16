@@ -1,0 +1,4 @@
+file://./log.owl#schematicRelation_14 a file://./log.owl#Occlusion
+file://./log.owl#schematicRelation_15 a file://./log.owl#Penetration
+file://./log.owl#schematicRelation_14 file://./log.owl#hasOccluder file://./log.owl#apple_27
+file://./log.owl#schematicRelation_14 file://./log.owl#hasOccludee file://./log.owl#knife_70

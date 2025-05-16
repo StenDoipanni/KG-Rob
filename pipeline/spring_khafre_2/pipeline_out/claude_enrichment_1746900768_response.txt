@@ -1,0 +1,100 @@
+@prefix kh: <file://./log.owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix pb: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix verbatlas: <http://verbatlas.org/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix en: <file://./log_enriched.owl#> .
+@prefix ns4: <https://w3id.org/framester/wn/wn30/instances/> .
+
+# Implied Future Events
+en:lionAttackingMan a dul:Situation ;
+    en:hasParticipant fred:lion_3, fred:man_1 ;
+    en:hasValue "true"^^xsd:boolean ;
+    en:impliedByDanger fred:danger_1 .
+
+en:manInjuryByLion a dul:Situation ;
+    en:hasParticipant fred:man_1, fred:lion_3 ;
+    en:consequenceOf en:lionAttackingMan ;
+    en:hasValue "true"^^xsd:boolean .
+
+en:manEscapingFromCage a dul:Situation ;
+    en:hasParticipant fred:man_1 ;
+    en:hasValue "false"^^xsd:boolean ;
+    en:impliedByLocation kh:image_0 .
+
+# Potentially Dangerous Implied Future Events
+en:lionAttackingMan en:introducesDanger "true"^^xsd:boolean ;
+    rdfs:subClassOf pb:attack-01 ;
+    en:dangerLevel "high"^^xsd:string .
+
+en:lionWakingUp a dul:Situation ;
+    en:hasParticipant fred:lion_3 ;
+    en:introducesDanger "true"^^xsd:boolean ;
+    en:hasValue "possible"^^xsd:string ;
+    en:dangerLevel "high"^^xsd:string .
+
+en:shieldFailure a dul:Situation ;
+    en:hasParticipant fred:object_1 ;
+    en:introducesDanger "true"^^xsd:boolean ;
+    en:hasValue "possible"^^xsd:string ;
+    en:dangerLevel "high"^^xsd:string .
+
+# Danger Avoidance Actions
+en:manLeavingCage a dul:Situation ;
+    en:hasParticipant fred:man_1 ;
+    en:isDangerAvoidanceAction "true"^^xsd:boolean ;
+    en:preventsSituation en:lionAttackingMan ;
+    en:effectivenessScore "high"^^xsd:string .
+
+en:keepingLionSedated a dul:Situation ;
+    en:hasParticipant fred:lion_3 ;
+    en:isDangerAvoidanceAction "true"^^xsd:boolean ;
+    en:preventsSituation en:lionWakingUp ;
+    en:effectivenessScore "high"^^xsd:string .
+
+en:strongerShield a dul:Situation ;
+    en:hasParticipant fred:object_1 ;
+    en:isDangerAvoidanceAction "true"^^xsd:boolean ;
+    en:preventsSituation en:shieldFailure ;
+    en:effectivenessScore "medium"^^xsd:string .
+
+# Risk Reduction Reactions
+en:manBackingAwayFurther a dul:Situation ;
+    en:hasParticipant fred:man_1 ;
+    en:hasRiskReductionValue 0.4 ;
+    en:reducesRiskOf en:lionAttackingMan .
+
+en:manUsingShieldEffectively a dul:Situation ;
+    en:hasParticipant fred:man_1, fred:object_1 ;
+    en:hasRiskReductionValue 0.7 ;
+    en:reducesRiskOf en:manInjuryByLion .
+
+en:distractingLion a dul:Situation ;
+    en:hasParticipant fred:lion_3 ;
+    en:hasRiskReductionValue 0.5 ;
+    en:reducesRiskOf en:lionAttackingMan .
+
+en:callForHelp a dul:Situation ;
+    en:hasParticipant fred:man_1 ;
+    en:hasRiskReductionValue 0.6 ;
+    en:reducesRiskOf en:manInjuryByLion .
+
+# Property declarations
+en:hasParticipant a owl:ObjectProperty .
+en:hasValue a owl:DatatypeProperty .
+en:impliedByDanger a owl:ObjectProperty .
+en:consequenceOf a owl:ObjectProperty .
+en:impliedByLocation a owl:ObjectProperty .
+en:introducesDanger a owl:DatatypeProperty .
+en:dangerLevel a owl:DatatypeProperty .
+en:isDangerAvoidanceAction a owl:DatatypeProperty .
+en:preventsSituation a owl:ObjectProperty .
+en:effectivenessScore a owl:DatatypeProperty .
+en:hasRiskReductionValue a owl:DatatypeProperty .
+en:reducesRiskOf a owl:ObjectProperty .

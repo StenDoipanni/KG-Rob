@@ -1,0 +1,37 @@
+===== GRAPH ENRICHMENT SUMMARY =====
+
+Original text: "Inside a barred circus cage, a man—clearly the Tramp character played by Charlie Chaplin (agent)—is caught in a moment of intense comedic tension as he holds a large, flat object like a shield (instrument) between himself and a full-grown lion (theme) lying on the floor just feet away. The man's wide-eyed expression and stiff posture convey alarm and desperation as he edges backward, clearly aware of the imminent danger. Despite the threat, the lion remains completely still, its eyes closed, resting its massive head on its paws in a pose of total indifference. The man's defensive stance and panicked energy are in stark contrast to the lion's calm, creating a powerful visual irony central to the comedy."
+
+Enrichment performed using model: claude-3-7-sonnet-20250219
+Original graph had 430 triples
+Added 71 new triples
+
+--- STATISTICS ---
+Implied Future Events: 2
+Potentially Dangerous Events: 6
+Danger Avoidance Actions: 4
+Risk Reduction Reactions: 13
+Other triples: 46
+
+--- EXAMPLE TRIPLES ---
+Implied Future Events:
+  - lionAttackingMan impliedByDanger http://www.ontologydesignpatterns.org/ont/fred/domain.owl#danger_1
+  - manEscapingFromCage impliedByLocation file://./log.owl#image_0
+
+Potentially Dangerous Events:
+  - lionWakingUp dangerLevel high
+  - lionWakingUp introducesDanger true
+  - lionAttackingMan dangerLevel high
+
+Danger Avoidance Actions:
+  - keepingLionSedated isDangerAvoidanceAction true
+  - strongerShield isDangerAvoidanceAction true
+  - manLeavingCage isDangerAvoidanceAction true
+
+Risk Reduction Reactions:
+  - callForHelp hasRiskReductionValue 0.6
+  - manBackingAwayFurther hasRiskReductionValue 0.4
+  - manUsingShieldEffectively hasRiskReductionValue 0.7
+
+--- FULL ENRICHMENT ---
+For complete results, see the enriched graph file and cleaned_response.txt

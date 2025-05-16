@@ -1,0 +1,4 @@
+kh:knife_70 owl:sameAs fred:object_1 .
+kh:apple_27 owl:sameAs fred:shield_1 .
+kh:schematicRelation_14 owl:sameAs fred:resemble_1 .
+kh:schematicRelation_15 owl:sameAs fred:hold_1 .

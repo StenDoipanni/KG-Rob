@@ -1,0 +1,36 @@
+@prefix kh: <file://./log.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kh:hasId a owl:DatatypeProperty .
+
+kh:hasOccludee a owl:ObjectProperty .
+
+kh:hasOccluder a owl:ObjectProperty .
+
+kh:hasPenetrator a owl:ObjectProperty .
+
+kh:hasPenetree a owl:ObjectProperty .
+
+kh:image_0 a kh:Image,
+        owl:NamedIndividual ;
+    kh:hasId "9.72"^^xsd:string .
+
+kh:schematicRelation_14 a kh:Occlusion,
+        owl:NamedIndividual ;
+    kh:eventMode kh:Ended ;
+    kh:hasOccludee kh:knife_70 ;
+    kh:hasOccluder kh:apple_27 .
+
+kh:schematicRelation_15 a kh:Penetration,
+        owl:NamedIndividual ;
+    kh:eventMode kh:Ended ;
+    kh:hasPenetrator kh:knife_70 ;
+    kh:hasPenetree kh:apple_27 .
+
+kh:apple_27 a kh:apple,
+        owl:NamedIndividual .
+
+kh:knife_70 a kh:knife,
+        owl:NamedIndividual .
+

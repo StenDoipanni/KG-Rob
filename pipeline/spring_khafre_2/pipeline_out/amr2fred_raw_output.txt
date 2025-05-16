@@ -1,0 +1,404 @@
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/hold-01.thing-held> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/grow-01> <http://www.w3.org/2000/01/rdf-schema#label> "increase,"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/create-01.thing-created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/calm-03> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Man> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-man-noun-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/catch-03.trapped> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/express-01> <http://www.w3.org/2000/01/rdf-schema#label> "say"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lie_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/lie-07.entity-in-the-position> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#rest_1> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#restBy> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pose_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Massive> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-massive-adjectivesatellite-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#despair_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/despair-01.experiencer> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#resemble_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/resemble-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Just> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#indifferent_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#total_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#hold_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/hold-01> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/lie-07> <http://www.w3.org/2000/01/rdf-schema#label> "assume a horizontal position, more generally 'exist', existing"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Irony> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#powerful_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/powerful-02> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/powerful-02> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Foot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_quantity> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/intense-02> <http://www.w3.org/2000/01/rdf-schema#label> "extreme, rich, concentrated"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/stand-11> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/edge-03.edged-with-what> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Paw> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#backward_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Backward> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Man> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Visual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/schema/AdjectivalQuality> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/resemble-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0511f> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/remain-01.thing-remaining> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_3> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#stand_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Visual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#rest_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#remain_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/remain-01.thing-remaining> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Moment> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-moment-noun-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Man> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_person> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#mean_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/mean-01.meaning> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#character_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/despair-01.experiencer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#powerful_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Predicate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/stand-11.entity-having-a-strong-stance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Shield> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_artifact> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#flat_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/flat-06> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#object_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#large_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-01> <http://www.w3.org/2000/01/rdf-schema#label> "to be or place in a resting position"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/wn/wn30/instances/synset-head-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "the upper part of the human body or the front part of the body in animals; contains the face and brains; \"he stuck his head out the window\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Imminent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/schema/AdjectivalQuality> .
+<https://w3id.org/framester/wn/wn30/instances/synset-foot-noun-2> <https://w3id.org/framester/wn/wn30/schema/gloss> "a linear unit of length equal to 12 inches or a third of a yard; \"he is six feet tall\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#central_1> <https://w3id.org/framester/amr/part-of> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#comedy_2> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/flat-06> <http://www.w3.org/2000/01/rdf-schema#label> "even, uniform, unvarying, horizontally level"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/powerful-02.powerful-entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/grow-01.thing-grown> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/contrast-01.second-item-in-comparison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#distance-quantity_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue> "1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Central> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/mean-01.meaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_1> <https://w3id.org/framester/amr/part-of> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_3> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/create-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0483f> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/remain-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0630f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#create_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/create-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Floor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-floor-noun-1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/mean-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/resemble-01.copy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/play-02> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0014f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#object_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Object> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/alarm-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0582f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#flat_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+<https://w3id.org/framester/wn/wn30/instances/synset-barely-adverb-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "only a very short time before; \"they could barely hear the speaker\"; \"we hardly knew them\"; \"just missed being hit\"; \"had scarcely rung the bell when the door flew open\"; \"would have scarce arrived before she would have found some excuse to leave\"- W.B.Yeats"@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#massive_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#stand_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/stand-11.description-of-the-stance> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#defend_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#total_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Total> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#express_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/express-01.speaker> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Still> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/d0.owl#Topic> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Man> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Theme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_communication> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/have-concession-91.main-event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Man> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#panic_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Head> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/express-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0009f> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/realize-01> <http://www.w3.org/2000/01/rdf-schema#label> "come to know"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/hold-01> <http://www.w3.org/2000/01/rdf-schema#label> "grasp, bear, keep"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#mean_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/mean-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#calm_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/calm-03.calm-entity> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_4> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#paw_1> <https://w3id.org/framester/amr/part-of> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_3> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Still> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-inactive-adjectivesatellite-10> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#create_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/create-01.creator> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#contrast_1> .
+<https://w3id.org/framester/wn/wn30/instances/synset-man-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "an adult person who is male (as opposed to a woman); \"there were two women and six men on the bus\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#central_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Central> .
+<https://w3id.org/framester/wn/wn30/instances/synset-irony-noun-3> <https://w3id.org/framester/wn/wn30/schema/gloss> "a trope that involves incongruity between what is expected and what occurs"@en-us .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/calm-03.calm-entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#have-concession_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/have-concession-91> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#hold_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Location> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_3> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#energy_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/stand-11.description-of-the-stance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Paw> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_animal> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/panic-01> <http://www.w3.org/2000/01/rdf-schema#label> "be all afluster, cause to be terrified"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Instrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/contrast-01.first-item-in-comparison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#play_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/play-02.actor> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#person_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#Conjunct> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Energy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/d0.owl#Characteristic> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/play-02> <http://www.w3.org/2000/01/rdf-schema#label> "play a role"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#realize_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/realize-01.new-knower> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/realize-01.new-knower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#express_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/express-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#clear_2> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/clear-06.thing-that-is-clear> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#realize_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Energy> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-energy-noun-3> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/resemble-01> <http://www.w3.org/2000/01/rdf-schema#label> "seem like"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/pose-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#irony_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Irony> .
+<https://w3id.org/framester/wn/wn30/instances/synset-ocular-adjectivesatellite-3> <https://w3id.org/framester/wn/wn30/schema/gloss> "visible; \"be sure of it; give me the ocular proof\"- Shakespeare; \"a visual presentation\"; \"a visual image\""@en-us .
+<https://w3id.org/framester/wn/wn30/instances/synset-entire-adjectivesatellite-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "constituting the full quantity or extent; complete; \"an entire town devastated by an earthquake\"; \"gave full attention\"; \"a total failure\""@en-us .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/catch-03.trapped> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#foot_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#just_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/lie-07> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Comedy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_communication> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#character_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Character> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#resemble_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/resemble-01.copy> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#object_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Head> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#indifferent_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/indifferent-01.indifferent-entity> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_3> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#resemble_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/resemble-01.original> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#shield_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_cognition> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/flat-06.flat-thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#rest_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Predicate> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#paw_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_2> <https://w3id.org/framester/amr/part-of> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_3> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/realize-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/have-concession-91.concession> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Danger> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-danger-noun-3> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/despair-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0582f> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/resemble-01.original> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/powerful-02> <http://www.w3.org/2000/01/rdf-schema#label> "having great power, influence"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#clear_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/intense-02.intense-thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#realize_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/realize-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#edge_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/edge-03.edged-with-what> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#backward_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/flat-06> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Instrument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_artifact> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Danger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/threaten-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Head> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#realize_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/realize-01.new-knowledge> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#danger_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Irony> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_communication> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/catch-03> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/threaten-01> <http://www.w3.org/2000/01/rdf-schema#label> "threaten"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/schema/subsumedUnder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/wn/wn30/instances/synset-back-adverb-2> <https://w3id.org/framester/wn/wn30/schema/gloss> "at or to or toward the back or rear; \"he moved back\"; \"tripped when he stepped backward\"; \"she looked rearward out the window of the car\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#threaten_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/threaten-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#stand_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/stand-11> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tense-01> <http://www.w3.org/2000/01/rdf-schema#label> "(cause to) become tight(er)"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Massive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Shield> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/alarm-01> <http://www.w3.org/2000/01/rdf-schema#label> "to give warning to, frighten"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#Conjunct> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/create-01> <http://www.w3.org/2000/01/rdf-schema#label> "create"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Floor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/d0.owl#Location> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#person_1> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Charlie_Chaplin> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/play-02.actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#instrument_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Instrument> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Irony> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-irony-noun-3> .
+<https://w3id.org/framester/wn/wn30/instances/synset-theme-noun-3> <https://w3id.org/framester/wn/wn30/schema/gloss> "(music) melodic subject of a musical composition; \"the theme is announced in the first measures\"; \"the accompanist picked up the idea and elaborated it\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_2> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#alarm_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#tense_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#comedy_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/pose-01.player> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/catch-03> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0276f> .
+<https://w3id.org/framester/wn/wn30/instances/synset-comedy-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "light and humorous drama with a happy ending"@en-us .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/clear-06> <http://www.w3.org/2000/01/rdf-schema#label> "apparent, obvious, well-explained, "^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#irony_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#central_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Floor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_artifact> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Energy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_attribute> .
+<https://w3id.org/framester/wn/wn30/instances/synset-at_hand-adjectivesatellite-2> <https://w3id.org/framester/wn/wn30/schema/gloss> "close in time; about to occur; \"retribution is at hand\"; \"some people believe the day of judgment is close at hand\"; \"in imminent danger\"; \"his impending retirement\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#comedy_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Comedy> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Instrument> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-instrument-noun-1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/grow-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_tops> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Time> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#hold_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/hold-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0040f> .
+<https://w3id.org/framester/wn/wn30/instances/synset-massive-adjectivesatellite-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "imposing in size or bulk or solidity; \"massive oak doors\"; \"Moore's massive sculptures\"; \"the monolithic proportions of Stalinist architecture\"; \"a monumental scale\""@en-us .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/remain-01.attribute-of-arg1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Theme> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-theme-noun-3> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Foot> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-foot-noun-2> .
+<https://w3id.org/framester/wn/wn30/instances/synset-cardinal-adjectivesatellite-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "serving as an essential component; \"a cardinal rule\"; \"the central cause of the problem\"; \"an example that was fundamental to the argument\"; \"computers are fundamental to modern industrial structure\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#panic_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/panic-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#complete_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/complete-02.thing-whose-degree-is-emphasized> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#still_1> .
+<https://w3id.org/framester/wn/wn30/instances/synset-shield-noun-2> <https://w3id.org/framester/wn/wn30/schema/gloss> "armor carried on the arm to intercept blows"@en-us .
+<https://w3id.org/framester/wn/wn30/instances/synset-character-noun-4> <https://w3id.org/framester/wn/wn30/schema/gloss> "an actor's portrayal of someone in a play; \"she played the part of Desdemona\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Head> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_body> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/play-02.role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#intense_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/intense-02.intense-thing> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#tense_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#floor_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Floor> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#distance-quantity_1> <https://w3id.org/framester/amr/unit> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#foot_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#panic_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/panic-01.poor-fearful-entity> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#energy_1> .
+<https://w3id.org/framester/amr/part-of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#hold_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/hold-01.thing-held> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#object_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Predicate> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#moment_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#full_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Full> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/hold-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#grow_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/grow-01.thing-grown> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/defend-01> <http://www.w3.org/2000/01/rdf-schema#label> "defend"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#despair_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/despair-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#away_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Away> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#edge_1> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#edgeBy> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#realize_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/stand-11> <http://www.w3.org/2000/01/rdf-schema#label> "have a strong stance, having a strong position on a subject matter"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/lie-07.entity-in-the-position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/indifferent-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#distance-quantity_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Distance-quantity> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/defend-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Massive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Away> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#imminent_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Imminent> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Large> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#rest_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/rest-01.agent> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#contrast_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/contrast-01> .
+<https://w3id.org/framester/wn/wn30/instances/synset-object-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "a tangible and visible entity; an entity that can cast a shadow; \"it was full of rackets, balls and other objects\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_animal> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/indifferent-01.indifferent-entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/mean-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0080f> .
+<https://w3id.org/framester/amr/unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#alarm_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/alarm-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Between> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/rest-01.entity-resting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/create-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/resemble-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/alarm-01.entity-alarmed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/calm-03> <http://www.w3.org/2000/01/rdf-schema#label> "still, relaxed"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/wn/wn30/instances/synset-large-adjective-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "above average in size or number or quantity or magnitude or extent; \"a large city\"; \"set out for the big city\"; \"a large sum\"; \"a big (or large) barn\"; \"a large family\"; \"big businesses\"; \"a big expenditure\"; \"a large number of newspapers\"; \"a big group of scientists\"; \"large areas of the world\""@en-us .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/defend-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0251f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Total> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/create-01.creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Central> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-cardinal-adjectivesatellite-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pose_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/pose-01.player> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_3> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/edge-03> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/rest-01.agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Total> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-entire-adjectivesatellite-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Man> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/despair-01> <http://www.w3.org/2000/01/rdf-schema#label> "to give up hope"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/realize-01.new-knowledge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#flat_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/flat-06.flat-thing> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#object_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#remain_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/remain-01.attribute-of-arg1> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#still_1> .
+<https://w3id.org/framester/wn/wn30/instances/synset-danger-noun-3> <https://w3id.org/framester/wn/wn30/schema/gloss> "a cause of pain or injury or loss; \"he feared the dangers of traveling by air\""@en-us .
+<https://w3id.org/framester/wn/wn30/instances/synset-inactive-adjectivesatellite-10> <https://w3id.org/framester/wn/wn30/schema/gloss> "not in physical motion; \"the inertia of an object at rest\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#remain_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Time> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#edge_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lie_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/lie-07> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/hold-01.holder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Character> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-character-noun-4> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#shield_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Shield> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/express-01.utterance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/contrast-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0627f> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/tense-01.thing-tightening> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Large> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/clear-06> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#express_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/mean-01.element-containing-meaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Danger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_state> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#moment_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#tense_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#defend_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/defend-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#complete_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/complete-02> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#theme_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#powerful_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/powerful-02.powerful-entity> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#irony_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#person_1> <https://schema.org/name> "Charlie_Chaplin"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Backward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adv_all> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/realize-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0093f> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/alarm-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Away> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-away-adverb-2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Total> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lie_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/lie-07.location> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#floor_1> .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#have-concession_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/have-concession-91.main-event> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#remain_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pose_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/pose-01.role> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#indifferent_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#clear_2> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/panic-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#rest_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Large> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-large-adjective-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#remain_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/remain-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#irony_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#visual_1> .
+<https://w3id.org/framester/wn/wn30/instances/synset-paw-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "a clawed foot of an animal especially a quadruped"@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Moment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#massive_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Massive> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#person_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#agent_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/remain-01> <http://www.w3.org/2000/01/rdf-schema#label> "be left behind"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Foot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#moment_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Moment> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Head> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-head-noun-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#tense_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tense-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#Conjunct> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/contrast-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Massive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/schema/AdjectivalQuality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#edge_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/edge-03> .
+<http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/wn/wn30/instances/synset-moment-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "a particular point in time; \"the moment he arrived the party began\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Imminent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#theme_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Theme> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/mean-01> <http://www.w3.org/2000/01/rdf-schema#label> "signal, convey"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#energy_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Energy> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Just> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adv_all> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/edge-03.decorator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Location> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#tense_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/tense-01.thing-tightening> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Shield> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-shield-noun-2> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/pose-01> <http://www.w3.org/2000/01/rdf-schema#label> "adopt an attitude, role"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#contrast_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/contrast-01.first-item-in-comparison> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_3> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/express-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#person_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/d0.owl#Activity> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/edge-03> <http://www.w3.org/2000/01/rdf-schema#label> "provide an edge or frame for an object"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#indifferent_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/indifferent-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#stand_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/stand-11.entity-having-a-strong-stance> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_3> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#pose_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/pose-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#rest_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/rest-01.entity-resting> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#head_2> .
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/panic-01.poor-fearful-entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Imminent> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-at_hand-adjectivesatellite-2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#mean_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/mean-01.element-containing-meaning> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#shield_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#instrument_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/despair-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/catch-03> <http://www.w3.org/2000/01/rdf-schema#label> "trap"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Visual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#complete_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Paw> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-paw-noun-1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#hold_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/hold-01.holder> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#danger_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#imminent_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#comedy_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Comedy> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#contrast_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/contrast-01.second-item-in-comparison> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#calm_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#clear_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/clear-06> .
+<https://w3id.org/framester/wn/wn30/instances/synset-floor-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "the inside lower horizontal surface (as of a room, hallway, tent, or other structure); \"they needed rugs to cover the bare floors\"; \"we spread our sleeping bags on the dry floor of the tent\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_2> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#despair_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#paw_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Paw> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#play_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/play-02> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Backward> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-back-adverb-2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Away> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adv_all> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/pose-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0622f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#grow_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/grow-01.amount-increased-by> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#full_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Imminent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/complete-02.thing-whose-degree-is-emphasized> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#agent_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#just_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Just> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Visual> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-ocular-adjectivesatellite-3> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#foot_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Foot> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/catch-03> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#clear_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/clear-06.thing-that-is-clear> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#play_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Central> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#floor_1> <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#Location> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#distance-quantity_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Theme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Comedy> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-comedy-noun-1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/grow-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0430f> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/hold-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0114f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#character_1> <https://schema.org/name> "Tramp"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/intense-02> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/threaten-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0461f> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#large_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Large> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#distance-quantity_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#away_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#alarm_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/alarm-01.entity-alarmed> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#visual_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Visual> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#intense_1> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#catch_1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/lie-07.location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#create_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/create-01.thing-created> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#irony_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#character_1> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Tramp_(tramp)> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/complete-02> <http://www.w3.org/2000/01/rdf-schema#label> "total, entire, full"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Just> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-barely-adverb-1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/tense-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/remain-01> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Backward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/express-01.speaker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#have-concession_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/have-concession-91.concession> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#threaten_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#intense_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/intense-02> .
+<https://w3id.org/framester/wn/wn30/instances/synset-energy-noun-3> <https://w3id.org/framester/wn/wn30/schema/gloss> "enterprising or ambitious drive; \"Europeans often laugh at American energy\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#danger_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Danger> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/complete-02> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Still> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-adj_all> .
+<https://w3id.org/framester/wn/wn30/instances/synset-away-adverb-2> <https://w3id.org/framester/wn/wn30/schema/gloss> "from one's possession; \"he gave out money to the poor\"; \"gave away the tickets\""@en-us .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#clear_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/clear-06> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/panic-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0582f> .
+<https://w3id.org/framester/wn/wn30/instances/synset-lion-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "large gregarious predatory feline of Africa and India having a tawny coat with a shaggy mane in the male"@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#calm_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/calm-03> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#grow_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/grow-01> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-lion-noun-1> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/indifferent-01> <http://www.w3.org/2000/01/rdf-schema#label> "indifferent"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#lion_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Lion> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/clear-06.thing-that-is-clear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/framester/wn/wn30/instances/synset-instrument-noun-1> <https://w3id.org/framester/wn/wn30/schema/gloss> "a device that requires skill for proper use"@en-us .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#play_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/play-02.role> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#character_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#express_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/express-01.utterance> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#conjunct_2> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Moment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/framester/wn/wn30/instances/supersense-noun_time> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/rest-01> <https://w3id.org/framester/schema/subsumedUnder> <http://verbatlas.org/0361f> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/grow-01.amount-increased-by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Object> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/framester/wn/wn30/instances/synset-object-noun-1> .
+<https://w3id.org/framester/data/propbank-3.4.0/LocalRole/pose-01.role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#edge_1> <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/edge-03.decorator> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#man_1> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#still_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Still> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/play-02> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+<http://www.ontologydesignpatterns.org/ont/fred/domain.owl#Comedy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/contrast-01> <http://www.w3.org/2000/01/rdf-schema#label> "point out differences, measure of difference"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/framester/data/propbank-3.4.0/RoleSet/have-concession-91> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .

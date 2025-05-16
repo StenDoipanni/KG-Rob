@@ -1,0 +1,42 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix framester: <https://w3id.org/framester/schema/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dfl: <http://www.ease-crc.org/ont/SOMA_DFL.owl#> .
+@prefix affordances_situations: <http://www.W3C.org/khafre/affordances_situations.owl#> .
+
+@prefix log: <file://./log.owl#> .
+
+        
+log:hasOccludee rdf:type owl:ObjectProperty .
+log:hasOccluder rdf:type owl:ObjectProperty .
+log:hasPenetrator rdf:type owl:ObjectProperty .
+log:hasPenetree rdf:type owl:ObjectProperty .
+log:hasId rdf:type owl:DatatypeProperty .
+
+log:image_0
+    rdf:type owl:NamedIndividual ;
+    rdf:type log:Image ;
+    log:hasId "9.72"^^xsd:string .
+
+log:schematicRelation_14
+    rdf:type owl:NamedIndividual ;
+    log:hasOccludee log:knife_70 ;
+    log:hasOccluder log:apple_27 ;
+    rdf:type log:Occlusion ;
+    log:eventMode log:Ended .
+
+log:schematicRelation_15
+    rdf:type owl:NamedIndividual ;
+    log:hasPenetrator log:knife_70 ;
+    log:hasPenetree log:apple_27 ;
+    rdf:type log:Penetration ;
+    log:eventMode log:Ended .
+
+log:apple_27 rdf:type owl:NamedIndividual ;
+    rdf:type log:apple .
+log:knife_70 rdf:type owl:NamedIndividual ;
+    rdf:type log:knife .

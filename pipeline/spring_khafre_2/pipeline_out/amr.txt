@@ -1,0 +1,108 @@
+ 
+    (z0 / multi-sentence :snt1 
+    (z1 / catch-03 :ARG1 
+    (z2 / man :ARG1-of 
+    (z3 / mean-01 :ARG2 
+    (z4 / character :wiki "Tramp (tramp)" :name 
+    (z5 / name :op1 "Tramp" )
+    :ARG1-of 
+    (z6 / play-02 :ARG0 
+    (z7 / person :wiki "Charlie Chaplin" :name 
+    (z8 / name :op1 "Charlie" :op2 "Chaplin" )
+    :mod 
+    (z9 / agent ) )
+    :ARG1-of 
+    (z10 / clear-06 ) ) ) )
+    :ARG2 
+    (z11 / moment :mod 
+    (z12 / tense-01 :ARG1 z2 :ARG1-of 
+    (z13 / intense-02 )
+    :mod 
+    (z14 / comedy ) ) )
+    :time 
+    (z15 / hold-01 :ARG0 z2 :ARG1 
+    (z16 / object :mod 
+    (z17 / large )
+    :ARG1-of 
+    (z18 / flat-06 )
+    :ARG1-of 
+    (z19 / resemble-01 :ARG2 
+    (z20 / shield :mod 
+    (z21 / instrument ) ) ) )
+    :location 
+    (z22 / between :op1 z2 :op2 
+    (z23 / lion :ARG1-of 
+    (z24 / grow-01 :ARG2 
+    (z25 / full ) )
+    :ARG1-of 
+    (z26 / lie-07 :ARG2 
+    (z27 / floor :location 
+    (z28 / away :op1 
+    (z29 / distance-quantity :quant 1 :unit 
+    (z30 / foot :mod 
+    (z31 / just ) ) ) ) ) )
+    :mod 
+    (z32 / theme ) ) ) ) )
+    :snt2 
+    (z33 / have-concession-91 :ARG1 
+    (z34 / remain-01 :ARG1 
+    (z35 / lion )
+    :ARG3 
+    (z36 / still :ARG1-of 
+    (z37 / complete-02 ) )
+    :time 
+    (z38 / edge-03 :ARG0 z2 :ARG2 
+    (z39 / backward )
+    :manner 
+    (z40 / realize-01 :ARG0 z2 :ARG1 
+    (z41 / danger :mod 
+    (z42 / imminent ) )
+    :ARG1-of 
+    (z43 / clear-06 ) ) ) )
+    :ARG2 
+    (z44 / threaten-01 ) )
+    :snt3 
+    (z45 / and :op1 
+    (z46 / express-01 :ARG0 
+    (z47 / man )
+    :ARG1 
+    (z48 / and :op1 
+    (z49 / alarm-01 :ARG1 z47 )
+    :op2 
+    (z50 / despair-01 :ARG0 z47 ) ) )
+    :op2 
+    (z51 / rest-01 :ARG0 
+    (z52 / head :part-of 
+    (z53 / lion )
+    :mod 
+    (z54 / massive ) )
+    :ARG1 
+    (z55 / head :part-of z53 )
+    :ARG2 
+    (z56 / paw :part-of z53 )
+    :manner 
+    (z57 / pose-01 :ARG0 z53 :ARG1 
+    (z58 / indifferent-01 :ARG1 z53 :degree 
+    (z59 / total ) ) ) ) )
+    :snt4 
+    (z60 / contrast-01 :ARG1 
+    (z61 / and :op1 
+    (z62 / stand-11 :ARG0 
+    (z63 / man )
+    :ARG1 
+    (z64 / defend-01 ) )
+    :op2 
+    (z65 / energy :ARG1-of 
+    (z66 / panic-01 ) ) )
+    :ARG2 
+    (z67 / calm-03 :ARG1 
+    (z68 / lion ) )
+    :ARG0-of 
+    (z69 / create-01 :ARG1 
+    (z70 / irony :ARG1-of 
+    (z71 / powerful-02 )
+    :mod 
+    (z72 / visual )
+    :mod 
+    (z73 / central :part-of 
+    (z74 / comedy ) ) ) ) ) )

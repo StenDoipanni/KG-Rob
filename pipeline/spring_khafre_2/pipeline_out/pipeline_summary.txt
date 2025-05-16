@@ -1,0 +1,26 @@
+===== PIPELINE PROCESSING SUMMARY =====
+
+Input file: evt_23492.5989675.ttl
+Processing completed at: 2025-05-10 20:13:13
+
+--- PIPELINE STEPS ---
+1. Loaded original graph: 22 triples
+2. Generated verbalizations: 0 for 2 relations
+3. AMR parsing with model: AMR3.parsing.pt
+4. Generated new graph from AMR: 404 triples
+5. Merged graphs: 501 triples
+6. Added entity alignments: 4 owl:sameAs triples
+7. Enriched graph: 0 new triples
+8. Final graph size: 501 triples
+
+--- OUTPUT FILES ---
+Original graph: ./pipeline_out/original_graph.ttl
+New graph from AMR: ./pipeline_out/new_graph.ttl
+Merged graph: ./pipeline_out/merged_graph.ttl
+Enriched graph: ./pipeline_out/enriched_graph.ttl
+Enrichment summary: ./pipeline_out/enrichment_summary.txt
+Verbalizations: ./pipeline_out/combined_text.txt
+
+--- PROCESSING STATISTICS ---
+Enrichment time: 22.44 seconds
+New information ratio: 0.00% increase

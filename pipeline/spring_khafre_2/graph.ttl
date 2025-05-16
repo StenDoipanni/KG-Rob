@@ -1,0 +1,44 @@
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fred:penetrate_1 a pbrs:penetrate-01 ;
+    pblr:penetrate-01.entity-entering fred:knife_2 ;
+    pblr:penetrate-01.place-or-thing-entered fred:apple_2 .
+
+fred:surround_1 a pbrs:surround-01 ;
+    pblr:surround-01.thing-surrounded fred:apple_1 ;
+    pblr:surround-01.thing-surrounding fred:knife_1 .
+
+pblr:penetrate-01.entity-entering a owl:ObjectProperty .
+
+pblr:penetrate-01.place-or-thing-entered a owl:ObjectProperty .
+
+pblr:surround-01.thing-surrounded a owl:ObjectProperty .
+
+pblr:surround-01.thing-surrounding a owl:ObjectProperty .
+
+fschema:subsumedUnder a owl:ObjectProperty .
+
+fred:apple_1 a fred:Apple .
+
+fred:apple_2 a fred:Apple .
+
+fred:knife_1 a fred:Knife .
+
+fred:knife_2 a fred:Knife .
+
+pbrs:penetrate-01 rdfs:label "go into, enter"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0506f .
+
+pbrs:surround-01 rdfs:label "be on all sides of, encompassing"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0420f .
+

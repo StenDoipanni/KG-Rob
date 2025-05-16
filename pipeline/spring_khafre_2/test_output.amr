@@ -1,0 +1,5 @@
+(v / sits-01
+    :ARG0 (s / cat)
+    :ARG1 (o / object
+        :mod (t / text
+            :mod "on the mat.")))

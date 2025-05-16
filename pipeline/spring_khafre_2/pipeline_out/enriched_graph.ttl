@@ -1,0 +1,770 @@
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix kh: <file://./log.owl#> .
+@prefix ns1: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix ns10: <file://./log_enriched.owl#> .
+@prefix ns2: <https://w3id.org/framester/amr/> .
+@prefix ns3: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix ns4: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix ns5: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix ns6: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix ns7: <http://dbpedia.org/resource/> .
+@prefix ns8: <kh:> .
+@prefix ns9: <fred:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pb: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix verbatlas: <http://verbatlas.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kh:hasId a owl:DatatypeProperty .
+
+kh:hasOccludee a owl:ObjectProperty .
+
+kh:hasOccluder a owl:ObjectProperty .
+
+kh:hasPenetrator a owl:ObjectProperty .
+
+kh:hasPenetree a owl:ObjectProperty .
+
+kh:schematicRelation_14 a kh:Occlusion,
+        owl:NamedIndividual ;
+    kh:eventMode kh:Ended ;
+    kh:hasOccludee kh:knife_70 ;
+    kh:hasOccluder kh:apple_27 .
+
+kh:schematicRelation_15 a kh:Penetration,
+        owl:NamedIndividual ;
+    kh:eventMode kh:Ended ;
+    kh:hasPenetrator kh:knife_70 ;
+    kh:hasPenetree kh:apple_27 .
+
+ns10:callForHelp a dul:Situation ;
+    ns10:hasParticipant fred:man_1 ;
+    ns10:hasRiskReductionValue 0.6 ;
+    ns10:reducesRiskOf ns10:manInjuryByLion .
+
+ns10:consequenceOf a owl:ObjectProperty .
+
+ns10:dangerLevel a owl:DatatypeProperty .
+
+ns10:distractingLion a dul:Situation ;
+    ns10:hasParticipant fred:lion_3 ;
+    ns10:hasRiskReductionValue 0.5 ;
+    ns10:reducesRiskOf ns10:lionAttackingMan .
+
+ns10:effectivenessScore a owl:DatatypeProperty .
+
+ns10:hasParticipant a owl:ObjectProperty .
+
+ns10:hasRiskReductionValue a owl:DatatypeProperty .
+
+ns10:hasValue a owl:DatatypeProperty .
+
+ns10:impliedByDanger a owl:ObjectProperty .
+
+ns10:impliedByLocation a owl:ObjectProperty .
+
+ns10:introducesDanger a owl:DatatypeProperty .
+
+ns10:isDangerAvoidanceAction a owl:DatatypeProperty .
+
+ns10:keepingLionSedated a dul:Situation ;
+    ns10:effectivenessScore "high"^^xsd:string ;
+    ns10:hasParticipant fred:lion_3 ;
+    ns10:isDangerAvoidanceAction true ;
+    ns10:preventsSituation ns10:lionWakingUp .
+
+ns10:manBackingAwayFurther a dul:Situation ;
+    ns10:hasParticipant fred:man_1 ;
+    ns10:hasRiskReductionValue 0.4 ;
+    ns10:reducesRiskOf ns10:lionAttackingMan .
+
+ns10:manEscapingFromCage a dul:Situation ;
+    ns10:hasParticipant fred:man_1 ;
+    ns10:hasValue false ;
+    ns10:impliedByLocation kh:image_0 .
+
+ns10:manLeavingCage a dul:Situation ;
+    ns10:effectivenessScore "high"^^xsd:string ;
+    ns10:hasParticipant fred:man_1 ;
+    ns10:isDangerAvoidanceAction true ;
+    ns10:preventsSituation ns10:lionAttackingMan .
+
+ns10:manUsingShieldEffectively a dul:Situation ;
+    ns10:hasParticipant fred:man_1,
+        fred:object_1 ;
+    ns10:hasRiskReductionValue 0.7 ;
+    ns10:reducesRiskOf ns10:manInjuryByLion .
+
+ns10:preventsSituation a owl:ObjectProperty .
+
+ns10:reducesRiskOf a owl:ObjectProperty .
+
+ns10:strongerShield a dul:Situation ;
+    ns10:effectivenessScore "medium"^^xsd:string ;
+    ns10:hasParticipant fred:object_1 ;
+    ns10:isDangerAvoidanceAction true ;
+    ns10:preventsSituation ns10:shieldFailure .
+
+dul:associatedWith a owl:ObjectProperty .
+
+dul:hasDataValue a owl:DatatypeProperty .
+
+dul:hasMember a owl:ObjectProperty .
+
+dul:hasQuality a owl:ObjectProperty .
+
+dul:precedes a owl:ObjectProperty .
+
+fred:clear_1 a pb:clear-06 ;
+    dul:precedes fred:catch_1 ;
+    pblr:clear-06.thing-that-is-clear fred:play_1 .
+
+fred:clear_2 a pb:clear-06 ;
+    dul:precedes fred:catch_1 ;
+    pblr:clear-06.thing-that-is-clear fred:realize_1 .
+
+fred:complete_1 a pb:complete-02 ;
+    dul:precedes fred:catch_1 ;
+    pblr:complete-02.thing-whose-degree-is-emphasized fred:still_1 .
+
+fred:conjunct_1 a ns6:Conjunct ;
+    dul:hasMember fred:express_1,
+        fred:rest_1 .
+
+fred:create_1 a pb:create-01 ;
+    pblr:create-01.creator fred:contrast_1 ;
+    pblr:create-01.thing-created fred:irony_1 .
+
+fred:flat_1 a pb:flat-06 ;
+    dul:precedes fred:catch_1 ;
+    pblr:flat-06.flat-thing fred:object_1 .
+
+fred:grow_1 a pb:grow-01 ;
+    pblr:grow-01.amount-increased-by fred:full_1 ;
+    pblr:grow-01.thing-grown fred:lion_1 .
+
+fred:have-concession_1 a pb:have-concession-91 ;
+    pblr:have-concession-91.concession fred:threaten_1 ;
+    pblr:have-concession-91.main-event fred:remain_1 .
+
+fred:intense_1 a pb:intense-02 ;
+    dul:precedes fred:catch_1 ;
+    pblr:intense-02.intense-thing fred:tense_1 .
+
+fred:lie_1 a pb:lie-07 ;
+    pblr:lie-07.entity-in-the-position fred:lion_1 ;
+    pblr:lie-07.location fred:floor_1 .
+
+fred:mean_1 a pb:mean-01 ;
+    pblr:mean-01.element-containing-meaning fred:man_1 ;
+    pblr:mean-01.meaning fred:character_1 .
+
+fred:panic_1 a pb:panic-01 ;
+    dul:precedes fred:catch_1 ;
+    pblr:panic-01.poor-fearful-entity fred:energy_1 .
+
+fred:powerful_1 a pb:powerful-02 ;
+    dul:precedes fred:catch_1 ;
+    pblr:powerful-02.powerful-entity fred:irony_1 .
+
+fred:resemble_1 a pb:resemble-01 ;
+    pblr:resemble-01.copy fred:object_1 ;
+    pblr:resemble-01.original fred:shield_1 .
+
+ns3:Location a owl:ObjectProperty .
+
+ns3:Predicate a owl:ObjectProperty .
+
+ns3:Time a owl:ObjectProperty .
+
+schema:name a owl:ObjectProperty .
+
+ns2:part-of a owl:ObjectProperty .
+
+ns2:unit a owl:ObjectProperty .
+
+pblr:alarm-01.entity-alarmed a owl:ObjectProperty .
+
+pblr:calm-03.calm-entity a owl:ObjectProperty .
+
+pblr:catch-03.trapped a owl:ObjectProperty .
+
+pblr:clear-06.thing-that-is-clear a owl:ObjectProperty .
+
+pblr:complete-02.thing-whose-degree-is-emphasized a owl:ObjectProperty .
+
+pblr:contrast-01.first-item-in-comparison a owl:ObjectProperty .
+
+pblr:contrast-01.second-item-in-comparison a owl:ObjectProperty .
+
+pblr:create-01.creator a owl:ObjectProperty .
+
+pblr:create-01.thing-created a owl:ObjectProperty .
+
+pblr:despair-01.experiencer a owl:ObjectProperty .
+
+pblr:edge-03.decorator a owl:ObjectProperty .
+
+pblr:edge-03.edged-with-what a owl:ObjectProperty .
+
+pblr:express-01.speaker a owl:ObjectProperty .
+
+pblr:express-01.utterance a owl:ObjectProperty .
+
+pblr:flat-06.flat-thing a owl:ObjectProperty .
+
+pblr:grow-01.amount-increased-by a owl:ObjectProperty .
+
+pblr:grow-01.thing-grown a owl:ObjectProperty .
+
+pblr:have-concession-91.concession a owl:ObjectProperty .
+
+pblr:have-concession-91.main-event a owl:ObjectProperty .
+
+pblr:hold-01.holder a owl:ObjectProperty .
+
+pblr:hold-01.thing-held a owl:ObjectProperty .
+
+pblr:indifferent-01.indifferent-entity a owl:ObjectProperty .
+
+pblr:intense-02.intense-thing a owl:ObjectProperty .
+
+pblr:lie-07.entity-in-the-position a owl:ObjectProperty .
+
+pblr:lie-07.location a owl:ObjectProperty .
+
+pblr:mean-01.element-containing-meaning a owl:ObjectProperty .
+
+pblr:mean-01.meaning a owl:ObjectProperty .
+
+pblr:panic-01.poor-fearful-entity a owl:ObjectProperty .
+
+pblr:play-02.actor a owl:ObjectProperty .
+
+pblr:play-02.role a owl:ObjectProperty .
+
+pblr:pose-01.player a owl:ObjectProperty .
+
+pblr:pose-01.role a owl:ObjectProperty .
+
+pblr:powerful-02.powerful-entity a owl:ObjectProperty .
+
+pblr:realize-01.new-knower a owl:ObjectProperty .
+
+pblr:realize-01.new-knowledge a owl:ObjectProperty .
+
+pblr:remain-01.attribute-of-arg1 a owl:ObjectProperty .
+
+pblr:remain-01.thing-remaining a owl:ObjectProperty .
+
+pblr:resemble-01.copy a owl:ObjectProperty .
+
+pblr:resemble-01.original a owl:ObjectProperty .
+
+pblr:rest-01.agent a owl:ObjectProperty .
+
+pblr:rest-01.entity-resting a owl:ObjectProperty .
+
+pblr:stand-11.description-of-the-stance a owl:ObjectProperty .
+
+pblr:stand-11.entity-having-a-strong-stance a owl:ObjectProperty .
+
+pblr:tense-01.thing-tightening a owl:ObjectProperty .
+
+fschema:subsumedUnder a owl:ObjectProperty .
+
+ns8:apple_27 owl:sameAs ns9:shield_1 .
+
+ns8:knife_70 owl:sameAs ns9:object_1 .
+
+ns8:schematicRelation_14 owl:sameAs ns9:resemble_1 .
+
+ns8:schematicRelation_15 owl:sameAs ns9:hold_1 .
+
+kh:image_0 a kh:Image,
+        owl:NamedIndividual ;
+    kh:hasId "9.72"^^xsd:string .
+
+ns10:lionWakingUp a dul:Situation ;
+    ns10:dangerLevel "high"^^xsd:string ;
+    ns10:hasParticipant fred:lion_3 ;
+    ns10:hasValue "possible"^^xsd:string ;
+    ns10:introducesDanger true .
+
+ns10:shieldFailure a dul:Situation ;
+    ns10:dangerLevel "high"^^xsd:string ;
+    ns10:hasParticipant fred:object_1 ;
+    ns10:hasValue "possible"^^xsd:string ;
+    ns10:introducesDanger true .
+
+fred:Away rdfs:subClassOf dul:Quality,
+        ns4:supersense-adv_all ;
+    owl:equivalentClass ns4:synset-away-adverb-2 .
+
+fred:Backward rdfs:subClassOf dul:Quality,
+        ns4:supersense-adv_all ;
+    owl:equivalentClass ns4:synset-back-adverb-2 .
+
+fred:Central rdfs:subClassOf dul:Quality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-cardinal-adjectivesatellite-1 .
+
+fred:Character rdfs:subClassOf ns5:Activity,
+        ns5:Topic,
+        ns4:supersense-noun_cognition ;
+    owl:equivalentClass ns4:synset-character-noun-4 .
+
+fred:Danger rdfs:subClassOf dul:Description,
+        ns4:supersense-noun_state ;
+    owl:equivalentClass ns4:synset-danger-noun-3 .
+
+fred:Energy rdfs:subClassOf ns5:Characteristic,
+        ns4:supersense-noun_attribute ;
+    owl:equivalentClass ns4:synset-energy-noun-3 .
+
+fred:Floor rdfs:subClassOf ns5:Location,
+        ns4:supersense-noun_artifact ;
+    owl:equivalentClass ns4:synset-floor-noun-1 .
+
+fred:Foot rdfs:subClassOf dul:Amount,
+        ns4:supersense-noun_quantity ;
+    owl:equivalentClass ns4:synset-foot-noun-2 .
+
+fred:Imminent rdfs:subClassOf dul:Quality,
+        fschema:AdjectivalQuality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-at_hand-adjectivesatellite-2 .
+
+fred:Instrument rdfs:subClassOf dul:PhysicalObject,
+        ns4:supersense-noun_artifact ;
+    owl:equivalentClass ns4:synset-instrument-noun-1 .
+
+fred:Irony rdfs:subClassOf dul:InformationEntity,
+        ns4:supersense-noun_communication ;
+    owl:equivalentClass ns4:synset-irony-noun-3 .
+
+fred:Just rdfs:subClassOf dul:Quality,
+        ns4:supersense-adv_all ;
+    owl:equivalentClass ns4:synset-barely-adverb-1 .
+
+fred:Large rdfs:subClassOf dul:Quality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-large-adjective-1 .
+
+fred:Massive rdfs:subClassOf dul:Quality,
+        fschema:AdjectivalQuality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-massive-adjectivesatellite-1 .
+
+fred:Moment rdfs:subClassOf dul:Amount,
+        ns4:supersense-noun_time ;
+    owl:equivalentClass ns4:synset-moment-noun-1 .
+
+fred:Object rdfs:subClassOf dul:PhysicalObject,
+        ns4:supersense-noun_tops ;
+    owl:equivalentClass ns4:synset-object-noun-1 .
+
+fred:Paw rdfs:subClassOf dul:PhysicalObject,
+        ns4:supersense-noun_animal ;
+    owl:equivalentClass ns4:synset-paw-noun-1 .
+
+fred:Shield rdfs:subClassOf dul:PhysicalObject,
+        ns4:supersense-noun_artifact ;
+    owl:equivalentClass ns4:synset-shield-noun-2 .
+
+fred:Still rdfs:subClassOf dul:Quality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-inactive-adjectivesatellite-10 .
+
+fred:Theme rdfs:subClassOf dul:InformationEntity,
+        ns4:supersense-noun_communication ;
+    owl:equivalentClass ns4:synset-theme-noun-3 .
+
+fred:Total rdfs:subClassOf dul:Quality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-entire-adjectivesatellite-1 .
+
+fred:Visual rdfs:subClassOf dul:Quality,
+        fschema:AdjectivalQuality,
+        ns4:supersense-adj_all ;
+    owl:equivalentClass ns4:synset-ocular-adjectivesatellite-3 .
+
+fred:agent_1 a dul:Agent .
+
+fred:alarm_1 a pb:alarm-01 ;
+    pblr:alarm-01.entity-alarmed fred:man_2 .
+
+fred:away_1 a fred:Away .
+
+fred:backward_1 a fred:Backward .
+
+fred:calm_1 a pb:calm-03 ;
+    pblr:calm-03.calm-entity fred:lion_4 .
+
+fred:central_1 a fred:Central ;
+    ns2:part-of fred:comedy_2 .
+
+fred:comedy_1 a fred:Comedy .
+
+fred:comedy_2 a fred:Comedy .
+
+fred:conjunct_2 a ns6:Conjunct ;
+    dul:hasMember fred:alarm_1,
+        fred:despair_1 .
+
+fred:conjunct_3 a ns6:Conjunct ;
+    dul:hasMember fred:energy_1,
+        fred:stand_1 .
+
+fred:contrast_1 a pb:contrast-01 ;
+    pblr:contrast-01.first-item-in-comparison fred:conjunct_3 ;
+    pblr:contrast-01.second-item-in-comparison fred:calm_1 .
+
+fred:defend_1 a pb:defend-01 .
+
+fred:despair_1 a pb:despair-01 ;
+    pblr:despair-01.experiencer fred:man_2 .
+
+fred:distance-quantity_1 a fred:Distance-quantity ;
+    dul:associatedWith fred:away_1 ;
+    dul:hasDataValue 1.0 ;
+    ns2:unit fred:foot_1 .
+
+fred:edge_1 a pb:edge-03 ;
+    fred:edgeBy fred:realize_1 ;
+    pblr:edge-03.decorator fred:man_1 ;
+    pblr:edge-03.edged-with-what fred:backward_1 .
+
+fred:express_1 a pb:express-01 ;
+    pblr:express-01.speaker fred:man_2 ;
+    pblr:express-01.utterance fred:conjunct_2 .
+
+fred:floor_1 a fred:Floor ;
+    ns3:Location fred:distance-quantity_1 .
+
+fred:foot_1 a fred:Foot ;
+    dul:hasQuality fred:just_1 .
+
+fred:full_1 a fred:Full .
+
+fred:head_1 a fred:Head ;
+    dul:hasQuality fred:massive_1 ;
+    ns2:part-of fred:lion_3 .
+
+fred:head_2 a fred:Head ;
+    ns2:part-of fred:lion_3 .
+
+fred:hold_1 a pb:hold-01 ;
+    ns3:Location fred:man_1 ;
+    pblr:hold-01.holder fred:man_1 ;
+    pblr:hold-01.thing-held fred:object_1 .
+
+fred:imminent_1 a fred:Imminent .
+
+fred:indifferent_1 a pb:indifferent-01 ;
+    dul:hasQuality fred:total_1 ;
+    pblr:indifferent-01.indifferent-entity fred:lion_3 .
+
+fred:instrument_1 a fred:Instrument .
+
+fred:just_1 a fred:Just .
+
+fred:large_1 a fred:Large .
+
+fred:lion_2 a fred:Lion .
+
+fred:lion_4 a fred:Lion .
+
+fred:man_3 a fred:Man .
+
+fred:massive_1 a fred:Massive .
+
+fred:moment_1 a fred:Moment ;
+    dul:hasQuality fred:tense_1 .
+
+fred:paw_1 a fred:Paw ;
+    ns2:part-of fred:lion_3 .
+
+fred:person_1 a dul:Person ;
+    dul:hasQuality fred:agent_1 ;
+    owl:sameAs ns7:Charlie_Chaplin ;
+    schema:name "Charlie_Chaplin"^^xsd:string .
+
+fred:play_1 a pb:play-02 ;
+    pblr:play-02.actor fred:person_1 ;
+    pblr:play-02.role fred:character_1 .
+
+fred:pose_1 a pb:pose-01 ;
+    pblr:pose-01.player fred:lion_3 ;
+    pblr:pose-01.role fred:indifferent_1 .
+
+fred:remain_1 a pb:remain-01 ;
+    ns3:Time fred:edge_1 ;
+    pblr:remain-01.attribute-of-arg1 fred:still_1 ;
+    pblr:remain-01.thing-remaining fred:lion_2 .
+
+fred:rest_1 a pb:rest-01 ;
+    fred:restBy fred:pose_1 ;
+    ns3:Predicate fred:paw_1 ;
+    pblr:rest-01.agent fred:head_1 ;
+    pblr:rest-01.entity-resting fred:head_2 .
+
+fred:shield_1 a fred:Shield ;
+    dul:hasQuality fred:instrument_1 .
+
+fred:stand_1 a pb:stand-11 ;
+    pblr:stand-11.description-of-the-stance fred:defend_1 ;
+    pblr:stand-11.entity-having-a-strong-stance fred:man_3 .
+
+fred:theme_1 a fred:Theme .
+
+fred:threaten_1 a pb:threaten-01 .
+
+fred:total_1 a fred:Total .
+
+fred:visual_1 a fred:Visual .
+
+pb:alarm-01 rdfs:label "to give warning to, frighten"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0582f .
+
+pb:calm-03 rdfs:label "still, relaxed"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:catch-03 rdfs:label "trap"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0276f .
+
+pb:complete-02 rdfs:label "total, entire, full"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:contrast-01 rdfs:label "point out differences, measure of difference"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0627f .
+
+pb:create-01 rdfs:label "create"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0483f .
+
+pb:defend-01 rdfs:label "defend"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0251f .
+
+pb:despair-01 rdfs:label "to give up hope"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0582f .
+
+pb:edge-03 rdfs:label "provide an edge or frame for an object"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:express-01 rdfs:label "say"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0009f .
+
+pb:flat-06 rdfs:label "even, uniform, unvarying, horizontally level"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:grow-01 rdfs:label "increase,"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0430f .
+
+pb:have-concession-91 rdfs:subClassOf dul:Event .
+
+pb:hold-01 rdfs:label "grasp, bear, keep"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0040f,
+        verbatlas:0114f .
+
+pb:indifferent-01 rdfs:label "indifferent"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:intense-02 rdfs:label "extreme, rich, concentrated"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:lie-07 rdfs:label "assume a horizontal position, more generally 'exist', existing"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:mean-01 rdfs:label "signal, convey"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0080f .
+
+pb:panic-01 rdfs:label "be all afluster, cause to be terrified"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0582f .
+
+pb:play-02 rdfs:label "play a role"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0014f .
+
+pb:pose-01 rdfs:label "adopt an attitude, role"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0622f .
+
+pb:powerful-02 rdfs:label "having great power, influence"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:realize-01 rdfs:label "come to know"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0093f .
+
+pb:remain-01 rdfs:label "be left behind"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0630f .
+
+pb:resemble-01 rdfs:label "seem like"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0511f .
+
+pb:rest-01 rdfs:label "to be or place in a resting position"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0361f .
+
+pb:stand-11 rdfs:label "have a strong stance, having a strong position on a subject matter"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:tense-01 rdfs:label "(cause to) become tight(er)"^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+pb:threaten-01 rdfs:label "threaten"^^xsd:string ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder verbatlas:0461f .
+
+ns4:synset-at_hand-adjectivesatellite-2 ns1:gloss "close in time; about to occur; \"retribution is at hand\"; \"some people believe the day of judgment is close at hand\"; \"in imminent danger\"; \"his impending retirement\""@en-us .
+
+ns4:synset-away-adverb-2 ns1:gloss "from one's possession; \"he gave out money to the poor\"; \"gave away the tickets\""@en-us .
+
+ns4:synset-back-adverb-2 ns1:gloss "at or to or toward the back or rear; \"he moved back\"; \"tripped when he stepped backward\"; \"she looked rearward out the window of the car\""@en-us .
+
+ns4:synset-barely-adverb-1 ns1:gloss "only a very short time before; \"they could barely hear the speaker\"; \"we hardly knew them\"; \"just missed being hit\"; \"had scarcely rung the bell when the door flew open\"; \"would have scarce arrived before she would have found some excuse to leave\"- W.B.Yeats"@en-us .
+
+ns4:synset-cardinal-adjectivesatellite-1 ns1:gloss "serving as an essential component; \"a cardinal rule\"; \"the central cause of the problem\"; \"an example that was fundamental to the argument\"; \"computers are fundamental to modern industrial structure\""@en-us .
+
+ns4:synset-character-noun-4 ns1:gloss "an actor's portrayal of someone in a play; \"she played the part of Desdemona\""@en-us .
+
+ns4:synset-comedy-noun-1 ns1:gloss "light and humorous drama with a happy ending"@en-us .
+
+ns4:synset-danger-noun-3 ns1:gloss "a cause of pain or injury or loss; \"he feared the dangers of traveling by air\""@en-us .
+
+ns4:synset-energy-noun-3 ns1:gloss "enterprising or ambitious drive; \"Europeans often laugh at American energy\""@en-us .
+
+ns4:synset-entire-adjectivesatellite-1 ns1:gloss "constituting the full quantity or extent; complete; \"an entire town devastated by an earthquake\"; \"gave full attention\"; \"a total failure\""@en-us .
+
+ns4:synset-floor-noun-1 ns1:gloss "the inside lower horizontal surface (as of a room, hallway, tent, or other structure); \"they needed rugs to cover the bare floors\"; \"we spread our sleeping bags on the dry floor of the tent\""@en-us .
+
+ns4:synset-foot-noun-2 ns1:gloss "a linear unit of length equal to 12 inches or a third of a yard; \"he is six feet tall\""@en-us .
+
+ns4:synset-head-noun-1 ns1:gloss "the upper part of the human body or the front part of the body in animals; contains the face and brains; \"he stuck his head out the window\""@en-us .
+
+ns4:synset-inactive-adjectivesatellite-10 ns1:gloss "not in physical motion; \"the inertia of an object at rest\""@en-us .
+
+ns4:synset-instrument-noun-1 ns1:gloss "a device that requires skill for proper use"@en-us .
+
+ns4:synset-irony-noun-3 ns1:gloss "a trope that involves incongruity between what is expected and what occurs"@en-us .
+
+ns4:synset-large-adjective-1 ns1:gloss "above average in size or number or quantity or magnitude or extent; \"a large city\"; \"set out for the big city\"; \"a large sum\"; \"a big (or large) barn\"; \"a large family\"; \"big businesses\"; \"a big expenditure\"; \"a large number of newspapers\"; \"a big group of scientists\"; \"large areas of the world\""@en-us .
+
+ns4:synset-lion-noun-1 ns1:gloss "large gregarious predatory feline of Africa and India having a tawny coat with a shaggy mane in the male"@en-us .
+
+ns4:synset-man-noun-1 ns1:gloss "an adult person who is male (as opposed to a woman); \"there were two women and six men on the bus\""@en-us .
+
+ns4:synset-massive-adjectivesatellite-1 ns1:gloss "imposing in size or bulk or solidity; \"massive oak doors\"; \"Moore's massive sculptures\"; \"the monolithic proportions of Stalinist architecture\"; \"a monumental scale\""@en-us .
+
+ns4:synset-moment-noun-1 ns1:gloss "a particular point in time; \"the moment he arrived the party began\""@en-us .
+
+ns4:synset-object-noun-1 ns1:gloss "a tangible and visible entity; an entity that can cast a shadow; \"it was full of rackets, balls and other objects\""@en-us .
+
+ns4:synset-ocular-adjectivesatellite-3 ns1:gloss "visible; \"be sure of it; give me the ocular proof\"- Shakespeare; \"a visual presentation\"; \"a visual image\""@en-us .
+
+ns4:synset-paw-noun-1 ns1:gloss "a clawed foot of an animal especially a quadruped"@en-us .
+
+ns4:synset-shield-noun-2 ns1:gloss "armor carried on the arm to intercept blows"@en-us .
+
+ns4:synset-theme-noun-3 ns1:gloss "(music) melodic subject of a musical composition; \"the theme is announced in the first measures\"; \"the accompanist picked up the idea and elaborated it\""@en-us .
+
+kh:apple_27 a kh:apple,
+        owl:NamedIndividual .
+
+kh:knife_70 a kh:knife,
+        owl:NamedIndividual .
+
+ns10:manInjuryByLion a dul:Situation ;
+    ns10:consequenceOf ns10:lionAttackingMan ;
+    ns10:hasParticipant fred:lion_3,
+        fred:man_1 ;
+    ns10:hasValue true .
+
+fred:Comedy rdfs:subClassOf dul:InformationEntity,
+        ns4:supersense-noun_communication ;
+    owl:equivalentClass ns4:synset-comedy-noun-1 .
+
+fred:Head rdfs:subClassOf dul:PhysicalObject,
+        ns4:supersense-noun_body ;
+    owl:equivalentClass ns4:synset-head-noun-1 .
+
+fred:character_1 a fred:Character ;
+    owl:sameAs ns7:Tramp_\(tramp\) ;
+    schema:name "Tramp"^^xsd:string .
+
+fred:danger_1 a fred:Danger ;
+    dul:hasQuality fred:imminent_1 .
+
+fred:energy_1 a fred:Energy .
+
+fred:irony_1 a fred:Irony ;
+    dul:hasQuality fred:central_1,
+        fred:visual_1 .
+
+fred:realize_1 a pb:realize-01 ;
+    pblr:realize-01.new-knower fred:man_1 ;
+    pblr:realize-01.new-knowledge fred:danger_1 .
+
+fred:still_1 a fred:Still .
+
+fred:tense_1 a pb:tense-01 ;
+    dul:hasQuality fred:comedy_1 ;
+    pblr:tense-01.thing-tightening fred:man_1 .
+
+pb:clear-06 rdfs:label "apparent, obvious, well-explained, "^^xsd:string ;
+    rdfs:subClassOf dul:Event .
+
+fred:Man rdfs:subClassOf dul:Person,
+        ns4:supersense-noun_person ;
+    owl:equivalentClass ns4:synset-man-noun-1 .
+
+fred:lion_1 a fred:Lion ;
+    dul:hasQuality fred:theme_1 .
+
+fred:man_2 a fred:Man .
+
+ns10:lionAttackingMan a dul:Situation ;
+    ns10:dangerLevel "high"^^xsd:string ;
+    ns10:hasParticipant fred:lion_3,
+        fred:man_1 ;
+    ns10:hasValue true ;
+    ns10:impliedByDanger fred:danger_1 ;
+    ns10:introducesDanger true ;
+    rdfs:subClassOf pb:attack-01 .
+
+fred:Lion rdfs:subClassOf dul:Organism,
+        ns4:supersense-noun_animal ;
+    owl:equivalentClass ns4:synset-lion-noun-1 .
+
+fred:object_1 a fred:Object ;
+    dul:hasQuality fred:large_1 .
+
+fred:catch_1 a pb:catch-03 ;
+    pblr:catch-03.trapped fred:man_1 .
+
+fred:lion_3 a fred:Lion .
+
+fred:man_1 a fred:Man ;
+    dul:hasQuality fred:Between ;
+    ns3:Location fred:lion_1 ;
+    ns3:Predicate fred:moment_1 ;
+    ns3:Time fred:hold_1 .
+

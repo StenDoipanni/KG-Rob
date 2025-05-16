@@ -1,0 +1,18 @@
+Based on the comparison between the original graph and the new graph, the following triples should be added to align the entities referring to the same things:
+
+kh:knife_70 owl:sameAs fred:object_1 .
+kh:apple_27 owl:sameAs fred:shield_1 .
+kh:schematicRelation_14 owl:sameAs fred:resemble_1 .
+kh:schematicRelation_15 owl:sameAs fred:hold_1 .
+
+The reasoning is as follows:
+
+1. The knife_70 in the original graph is described as being held by the man, which corresponds to the object_1 in the new graph that the man is holding and resembles a shield. So knife_70 and object_1 refer to the same entity.
+
+2. The apple_27 in the original graph is being penetrated by the knife and occludes it, which matches the shield_1 in the new graph that the object resembles. So apple_27 and shield_1 refer to the same entity. 
+
+3. The schematicRelation_14 in the original graph represents an occlusion event between the knife and apple, which corresponds to the resemble_1 event in the new graph where the object resembles a shield. So schematicRelation_14 and resemble_1 refer to the same occlusion/resemblance relation.
+
+4. Similarly, the schematicRelation_15 represents a penetration between the knife and apple, corresponding to the hold_1 event where the man holds the object. So schematicRelation_15 and hold_1 refer to the same penetration/holding relation.
+
+Therefore, adding these owl:sameAs triples aligns the entities between the two graphs that are referring to the same things based on the descriptions in the natural language verbalization.
