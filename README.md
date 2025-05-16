@@ -28,7 +28,7 @@ The complete list of CLI arguments is:
 AMR3.parsing.pt model can be downloaded from here: [AMR3.generation-1.0.tar.bz2](http://nlp.uniroma1.it/AMR/AMR3.generation-1.0.tar.bz2) and should be located like this `./spring_khafre_2/spring_amr/AMR3.parsing.pt`
 
 **IMPORTANT**
-The file with mappings to wikidata can be found [here](http://hrilabdemo.ddns.net/index_enwiki-latest.zip), and should be located at `./spring_khafre2/index_enwiki-latest.db`
+The file with mappings to wikidata can be found [here](http://hrilabdemo.ddns.net/index_enwiki-latest.zip), and should be located at `./spring_khafre_2/index_enwiki-latest.db`
 
 
 Command to verbalize using Ollama locally:
