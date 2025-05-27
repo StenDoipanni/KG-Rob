@@ -14,6 +14,7 @@ from util import TafPostProcessor  # Explicitly import TafPostProcessor
 #from visualization import DigraphWriter
 from nltk.corpus import wordnet
 import difflib
+from rdflib import Namespace
 
 # Import the SPRING parser dependencies
 import torch
@@ -49,7 +50,7 @@ logger = logging.getLogger(__name__)
 
 # Replace this with your test text if you want to skip Ollama
 # If left empty, the script will call Ollama for verbalization
-test_text = """Inside a barred circus cage, a man—clearly the Tramp character played by Charlie Chaplin (agent)—is caught in a moment of intense comedic tension as he holds a large, flat object like a shield (instrument) between himself and a full-grown lion (theme) lying on the floor just feet away. The man's wide-eyed expression and stiff posture convey alarm and desperation as he edges backward, clearly aware of the imminent danger. Despite the threat, the lion remains completely still, its eyes closed, resting its massive head on its paws in a pose of total indifference. The man's defensive stance and panicked energy are in stark contrast to the lion's calm, creating a powerful visual irony central to the comedy."""
+test_text = "Inside a barred circus cage, a man—clearly the Tramp character played by Charlie Chaplin (agent)—is caught in a moment of intense comedic tension as he holds a large, flat object like a shield (instrument) between himself and a full-grown lion (theme) lying on the floor just feet away. The man's wide-eyed expression and stiff posture convey alarm and desperation as he edges backward, clearly aware of the imminent danger. Despite the threat, the lion remains completely still, its eyes closed, resting its massive head on its paws in a pose of total indifference. The man's defensive stance and panicked energy are in stark contrast to the lion's calm, creating a powerful visual irony central to the comedy."  #"""This black and white film still shows a scene from what appears to be a silent-era comedy. In the center of the frame stands a man in casual attire (vest and light-colored shirt) on a street or sidewalk. On either side of him, two uniformed police officers are positioned on the steps of what looks like a government or public building with classical columns and large doors visible in the background. The officers are in dramatic poses with their arms raised - one appears to be holding a baton or nightstick. The composition suggests the police officers are either apprehending the central figure or possibly performing some kind of comedic routine around him."""
 
 # Ollama model to use
 ollama_model = "llama3.1:8b"
@@ -614,7 +615,7 @@ def load_spring_model(model_file=spring_model_file):
         # Go up one level to get to the implementation directory
         implementation_dir = os.path.dirname(script_dir)
         # Get the spring_amr directory
-        spring_amr_path = os.path.join(implementation_dir, "spring_khafre_2", "spring_amr")
+        spring_amr_path = os.path.join(implementation_dir, "spring_khafre", "spring_amr")
         
         # Check if setup.py exists and install the package if needed
         setup_py = os.path.join(spring_amr_path, "setup.py")
@@ -1309,6 +1310,138 @@ KG:
         return graph
 
 
+def ground_enrichment(graph, text, output_dir="./pipeline_out/"):
+    """
+    Enrich a knowledge graph by grounding complex situations with action/motion types.
+    
+    Args:
+        graph: The RDF graph to enrich
+        text: The original text that generated the graph
+        output_dir: Directory to save outputs
+        
+    Returns:
+        The grounded graph
+    """
+    logger.info("=========== GROUNDING ENRICHMENT ===========")
+    print("\n=========== GROUNDING ENRICHMENT ===========")
+    
+    # Create a new graph for the grounded triples
+    grounded_graph = Graph()
+    
+    # Bind the recommender system namespace
+    rs = Namespace('file://./log_recommender_system.owl#')
+    grounded_graph.bind('rs', rs)
+    
+    # Bind our own DUL namespace
+    DUL = Namespace('http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#')
+    grounded_graph.bind('dul', DUL)
+    
+    # Find all dul:Situation nodes with 'en' prefix
+    query = """
+    SELECT DISTINCT ?situation ?participant
+    WHERE {
+        ?situation a dul:Situation .
+        FILTER(CONTAINS(str(?situation), "en:"))
+        OPTIONAL {
+            ?situation ?p ?participant .
+            FILTER(CONTAINS(str(?p), "hasParticipant"))
+        }
+    }
+    """
+    
+    try:
+        results = graph.query(query)
+        situations = {}
+        
+        # Group participants by situation
+        for row in results:
+            situation = row.situation
+            participant = row.participant
+            if situation not in situations:
+                situations[situation] = []
+            if participant:
+                situations[situation].append(participant)
+        
+        # Process each situation
+        for situation, participants in situations.items():
+            # Add grounding triples based on the situation type
+            situation_str = str(situation)
+            
+            # Check for dangerous situations
+            if "Dangerous" in situation_str:
+                grounded_graph.add((situation, rs.requires, rs.Contact))
+                # Add roles for participants
+                for participant in participants:
+                    if "Avoidance" in situation_str:
+                        grounded_graph.add((participant, DUL.hasRole, rs.Contacter))
+                    else:
+                        grounded_graph.add((participant, DUL.hasRole, rs.Contacted))
+            
+            # Check for avoidance actions
+            elif "Avoidance" in situation_str:
+                grounded_graph.add((situation, rs.requires, rs.Movement))
+                grounded_graph.add((situation, rs.requires, rs.Departure))
+                # Add roles for participants
+                for participant in participants:
+                    grounded_graph.add((participant, DUL.hasRole, rs.Departer))
+            
+            # Check for risk reduction reactions
+            elif "Reduction" in situation_str:
+                grounded_graph.add((situation, rs.requires, rs.Movement))
+                grounded_graph.add((situation, rs.requires, rs.Approach))
+                # Add roles for participants
+                for participant in participants:
+                    grounded_graph.add((participant, DUL.hasRole, rs.Approacher))
+            
+            # Check for implied future events
+            elif "Future" in situation_str:
+                grounded_graph.add((situation, rs.requires, rs.Movement))
+                # Add roles for participants
+                for participant in participants:
+                    grounded_graph.add((participant, DUL.hasRole, rs.Trajector))
+        
+        # Save the grounded graph
+        grounded_graph_path = os.path.join(output_dir, "enriched_grounded_graph.ttl")
+        grounded_graph.serialize(grounded_graph_path, format="turtle")
+        logger.info(f"Saved grounded graph to {grounded_graph_path}")
+        print(f"Saved grounded graph to {grounded_graph_path}")
+        
+        # Generate visualization
+        save_graph_visualizations(grounded_graph, "enriched_grounded_graph", output_dir)
+        
+        # Create a summary file
+        summary_file = os.path.join(output_dir, "grounding_summary.txt")
+        with open(summary_file, "w") as f:
+            f.write("===== GROUNDING ENRICHMENT SUMMARY =====\n\n")
+            f.write(f"Original text: \"{text}\"\n\n")
+            f.write(f"Processed {len(situations)} situations\n")
+            f.write(f"Added {len(grounded_graph)} new triples\n\n")
+            
+            f.write("--- GROUNDED SITUATIONS ---\n")
+            for situation, participants in situations.items():
+                f.write(f"\nSituation: {situation}\n")
+                f.write("Participants:\n")
+                for participant in participants:
+                    f.write(f"  - {participant}\n")
+                # Get the grounding triples for this situation
+                for s, p, o in grounded_graph.triples((situation, None, None)):
+                    f.write(f"  Grounding: {p} {o}\n")
+        
+        logger.info(f"Created grounding summary at {summary_file}")
+        print(f"\nCreated grounding summary at {summary_file}")
+        
+        # Merge the grounded triples with the original graph
+        graph += grounded_graph
+        
+        return graph
+        
+    except Exception as e:
+        error_msg = f"Error in grounding enrichment: {e}"
+        logger.error(error_msg)
+        print(error_msg)
+        return graph
+
+
 def main():
     # Global declarations
     global ollama_model
@@ -1351,6 +1484,10 @@ def main():
                        help="Model to use for graph enrichment")
     parser.add_argument("--enrich-api-key", type=str, 
                        help="API key for enrichment model (required if using --enrich)")
+    
+    # Grounding enrichment arguments
+    parser.add_argument("--ground", action="store_true",
+                       help="Enable grounding enrichment of situations with action/motion types")
     
     # Online services argument
     parser.add_argument("--online-services", "-o", action="store_true", 
@@ -1418,10 +1555,27 @@ def main():
     input_graph_path = args.input
     
     try:
-        existing_graph.parse(input_graph_path, format="turtle")
+        # Read the file in binary mode first
+        with open(input_graph_path, 'rb') as f:
+            content = f.read()
+        
+        # Decode with UTF-8 and handle line endings
+        content = content.decode('utf-8')
+        content = content.replace('\r\n', '\n')  # Convert Windows line endings to Unix
+        
+        # Clean up binary string literals
+        content = content.replace("b'", "'")  # Remove b' prefix
+        content = content.replace('b"', '"')  # Remove b" prefix
+        content = re.sub(r"'b'", "'", content)  # Remove 'b' in quotes
+        content = re.sub(r'"b"', '"', content)  # Remove "b" in quotes
+        
+        # Parse the content
+        existing_graph.parse(data=content, format="turtle")
         logger.info(f"Loaded existing graph with {len(existing_graph)} triples")
     except Exception as e:
         logger.error(f"Error loading existing graph: {e}")
+        # Log the problematic content for debugging
+        logger.error(f"Problematic content (first 200 chars): {content[:200]}")
         return
     
     # Save all three graphs for separate viewing
@@ -1843,6 +1997,12 @@ def main():
                 error_msg = "Graph enrichment requested but no API key provided. Please provide --verbalization-api-key"
                 logger.error(error_msg)
                 print(f"\nERROR: {error_msg}")
+        
+        # Grounding enrichment
+        if args.ground:
+            logger.info("Starting grounding enrichment")
+            enriched_graph = ground_enrichment(merged_graph, cleaned_text, output_dir=pipeline_dir)
+            logger.info("Grounding enrichment completed")
         
     except Exception as e:
         logger.error(f"Error in main process: {e}")
