@@ -18,6 +18,7 @@ The complete list of CLI arguments is:
 --enrich : Enable graph enrichment with implicit knowledge
 --enrich-model : Model to use for graph enrichment ( default claude-3-7-sonnet-20250219)
 --enrich-api-key : API key for enrichment model (required if using --enrich)
+--ground : Enable graph grounding with classes and roles from the Khafre ontology 
 ```
 
 
@@ -54,6 +55,11 @@ python main.py --input evt_23492.5989675.ttl --verbalization-model claude-3-7-so
 ```
 
 Enrich with Claude 3.7
+```
+python main.py --input evt_23492.5989675.ttl --verbalization-model claude-3-7-sonnet-20250219 --verbalization-api-key $API_KEY --alignment-model claude-3-opus-20240229 --alignment-api-key $API_KEY --enrich --enrich-model claude-3-sonnet-20240229 --enrich-api-key $API_KEY --use-spring --spring-model AMR3.parsing.pt --online-services
+```
+
+Ground using Claude 3.7 and Classes and Roles from the [Khafre](https://github.com/Heideggerian-AI-v5/khafre/blob/main/axioms/khafre.ttl) ontology
 ```
 python main.py --input evt_23492.5989675.ttl --verbalization-model claude-3-7-sonnet-20250219 --verbalization-api-key $API_KEY --alignment-model claude-3-opus-20240229 --alignment-api-key $API_KEY --enrich --enrich-model claude-3-sonnet-20240229 --enrich-api-key $API_KEY --use-spring --spring-model AMR3.parsing.pt --online-services
 ```
