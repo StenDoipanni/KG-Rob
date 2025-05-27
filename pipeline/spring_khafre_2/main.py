@@ -15,6 +15,7 @@ from util import TafPostProcessor  # Explicitly import TafPostProcessor
 from nltk.corpus import wordnet
 import difflib
 from rdflib import Namespace
+from rdflib.namespace import RDF, RDFS, OWL, XSD
 
 # Import the SPRING parser dependencies
 import torch
@@ -1310,20 +1311,22 @@ KG:
         return graph
 
 
-def ground_enrichment(graph, text, output_dir="./pipeline_out/"):
+def ground_enrichment(graph, text, api_key, model="claude-3-7-sonnet-20250219", output_dir="./pipeline_out/"):
     """
-    Enrich a knowledge graph by grounding complex situations with action/motion types.
+    Enrich a knowledge graph by grounding complex situations with action/motion types using Claude.
     
     Args:
         graph: The RDF graph to enrich
         text: The original text that generated the graph
+        api_key: Claude API key
+        model: Claude model to use
         output_dir: Directory to save outputs
         
     Returns:
         The grounded graph
     """
-    logger.info("=========== GROUNDING ENRICHMENT ===========")
-    print("\n=========== GROUNDING ENRICHMENT ===========")
+    logger.info("=========== GROUNDING ENRICHMENT WITH CLAUDE ===========")
+    print("\n=========== GROUNDING ENRICHMENT WITH CLAUDE ===========")
     
     # Create a new graph for the grounded triples
     grounded_graph = Graph()
@@ -1336,105 +1339,440 @@ def ground_enrichment(graph, text, output_dir="./pipeline_out/"):
     DUL = Namespace('http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#')
     grounded_graph.bind('dul', DUL)
     
-    # Find all dul:Situation nodes with 'en' prefix
+    # Find all dul:Situation nodes with 'ns3:' prefix and ALL their related triples
     query = """
-    SELECT DISTINCT ?situation ?participant
+    PREFIX ns3: <file://./log_enriched.owl#>
+    PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+    SELECT DISTINCT ?situation ?p ?o
     WHERE {
-        ?situation a dul:Situation .
-        FILTER(CONTAINS(str(?situation), "en:"))
-        OPTIONAL {
-            ?situation ?p ?participant .
-            FILTER(CONTAINS(str(?p), "hasParticipant"))
+        # First find all situations with ns3: prefix
+        ?situation rdf:type dul:Situation .
+        FILTER (STRSTARTS(STR(?situation), STR(ns3:)))
+        
+        # Then get all triples where this situation is either subject or object
+        {
+            ?situation ?p ?o .
+        } UNION {
+            ?s ?p ?situation .
         }
     }
     """
     
     try:
+        # Print the graph size and namespaces for debugging
+        print(f"\nOriginal graph size: {len(graph)} triples")
+        print("Namespaces in graph:")
+        for prefix, namespace in graph.namespaces():
+            print(f"  {prefix}: {namespace}")
+        
+        # Get situations and their related triples
         results = graph.query(query)
-        situations = {}
         
-        # Group participants by situation
+        # Create a subgraph with only the enriched situations and their related triples
+        enriched_subgraph = Graph()
+        
+        # Bind all necessary namespaces
+        namespaces = {
+            'rs': rs,
+            'dul': DUL,
+            'ns3': Namespace('file://./log_enriched.owl#'),
+            'fred': Namespace('http://www.ontologydesignpatterns.org/ont/fred/domain.owl#'),
+            'pblr': Namespace('https://w3id.org/framester/data/propbank-3.4.0/LocalRole/'),
+            'pb': Namespace('https://w3id.org/framester/data/propbank-3.4.0/RoleSet/'),
+            'kh': Namespace('file://./log.owl#'),
+            'rdfs': RDFS,
+            'xsd': XSD,
+            'rdf': RDF,
+            'owl': OWL
+        }
+        
+        for prefix, namespace in namespaces.items():
+            enriched_subgraph.bind(prefix, namespace)
+        
+        # Add all relevant triples to the subgraph
+        triple_count = 0
         for row in results:
-            situation = row.situation
-            participant = row.participant
-            if situation not in situations:
-                situations[situation] = []
-            if participant:
-                situations[situation].append(participant)
+            if row.situation is not None and row.p is not None and row.o is not None:
+                enriched_subgraph.add((row.situation, row.p, row.o))
+                triple_count += 1
         
-        # Process each situation
-        for situation, participants in situations.items():
-            # Add grounding triples based on the situation type
-            situation_str = str(situation)
+        print(f"\nFound {triple_count} valid triples in enriched subgraph")
+        
+        if triple_count == 0:
+            print("\nWARNING: No triples found in enriched subgraph!")
+            print("Checking if there are any situations in the graph...")
             
-            # Check for dangerous situations
-            if "Dangerous" in situation_str:
-                grounded_graph.add((situation, rs.requires, rs.Contact))
-                # Add roles for participants
-                for participant in participants:
-                    if "Avoidance" in situation_str:
-                        grounded_graph.add((participant, DUL.hasRole, rs.Contacter))
+            # Try a simpler query to just find situations
+            simple_query = """
+            PREFIX ns3: <file://./log_enriched.owl#>
+            PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            
+            SELECT ?s
+            WHERE {
+                ?s rdf:type dul:Situation .
+                FILTER (STRSTARTS(STR(?s), STR(ns3:)))
+            }
+            """
+            
+            situation_results = graph.query(simple_query)
+            situation_count = len(list(situation_results))
+            print(f"Found {situation_count} situations with ns3: prefix")
+            
+            if situation_count == 0:
+                print("\nNo situations found! Checking for any dul:Situation instances...")
+                any_situation_query = """
+                PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                
+                SELECT ?s
+                WHERE {
+                    ?s rdf:type dul:Situation .
+                }
+                """
+                
+                any_situation_results = graph.query(any_situation_query)
+                any_situation_count = len(list(any_situation_results))
+                print(f"Found {any_situation_count} total dul:Situation instances")
+                
+                if any_situation_count > 0:
+                    print("\nFound situations but with different prefixes. Here are the first few:")
+                    for row in any_situation_results[:5]:
+                        print(f"  {row.s}")
+            
+            return graph  # Return original graph if no triples found
+        
+        print("\nEnriched subgraph contents:")
+        print(enriched_subgraph.serialize(format="turtle"))
+        
+        # Create the prompt for Claude with only the enriched situations
+        prompt = f"""You are given a set of RDF triples, a context in natural language, and a list of fundamental Action / Motion affordances.
+The context is the description of a scenario with ongoing events, participants, etc.
+The triples describe complex situations related to the context.
+The list of Action / Motion affordances are potential actions and motion types to be used to ground complex situations.
+
+Your task is to introduce new triples, grounding the complex dul:Situation(s) in the triples, according to the Action / Motion types.
+Use the @prefix "rs" for <file://./log_recommender_system.owl#> .
+
+IMPORTANT RULES:
+1. DO NOT create new situation entities. Use ONLY the exact situation URIs that appear in the input triples (e.g., en:manCallingForHelp, en:lionAttacking, etc.)
+2. DO NOT create new participant entities. Use ONLY the exact participant URIs that appear in the input triples (e.g., kh:person_16, kh:dog_13, etc.)
+3. You can only add new triples that ground the existing situations using the Action/Motion types and roles provided
+4. All new triples must use the existing URIs from the input triples
+
+Example:
+Context:
+```
+A man running from a police man.
+```
+
+Triples:
+```
+ns3:ForcefulArrest a dul:Situation ;
+    ns3:hasParticipant kh:person_16 ;
+    ns3:hasParticipant kh:officer_1 .
+```
+
+Action / Motion types:
+```
+Contact : an entity touches another entity
+Containment : an entity contains another entity
+Cutting : an entity cuts another entity
+```
+
+Grounding:
+```
+ns3:ForcefulArrest a dul:Situation ;
+    rs:requires kh:Containment , kh:Contact .
+
+kh:person_16 dul:hasRole kh:Contained , kh:Contacted.
+kh:officer_1 dul:hasRole kh:Contacter .
+```
+
+Proceed with the task given the following Context, Triples, and Action / Motion types.
+IMPORTANT: Use ONLY the exact URIs from the input triples. DO NOT create new entities.
+IMPORTANT: Do not write anything else other than the triples.
+
+Context:
+```
+{text}
+```
+
+Triples:
+```
+{enriched_subgraph.serialize(format="turtle")}
+```
+
+Action / Motion types:
+```
+Contact : An image schematic situation in which two physical objects have overlapping boundaries.
+Linkage : An image schematic relation in which two objects are connected in such a way that they are constrained to move together.
+Movement : An image schematic relation describing the movement of some objects relative to each other.
+    Approach : An object approaches another.
+    Departure : An object moves away from another.
+    Stillness : Two objects are in relative stillness to each other.
+    VerticalMovement : An object's movement has a significant vertical component.
+        Falling : An object's movement has a significant downward component.
+        Rising : An object's movement has a significant upward component.
+Occlusion : An image schematic relation in which one object (the occluder) is, relative to the observer, in front of another object (the occludee). Thus, the occluder object prevents, at least partially, the occludee object from being seen by the observer.
+Penetration : An image schematic relation describing that an object (the penetrator) has come to occupy some region of space that used to belong to, or is partially enclosed by, another object (the penetree).
+Support : A schematic relation describing that an object (the supporter) prevents the falling of another object (the supportee).
+```
+
+Roles:
+```
+Contacter : A role played by an object in contact with some other one.
+LinkedObject : A role played by an object attached to something else.
+Occludee : A role played by an object with lines of sight to some observer being blocked by some other object.
+Occluder : A role played by an object which blocks an observer's line of sight to some other object.
+Penetrator : A role played by an object that is inserted into a spatial region that belonged to or is functionally controlled by another object.
+Penetree : A role played by an object whose spatial region or functionally controlled spatial region is being overlapped by some other object.
+Supportee : A role played by an object prevented from falling by something else.
+Supporter : A role played by an object which prevents the fall of something else.
+Trajector : A role played by an object in motion.
+    Approacher : A role played by an object moving towards something.
+    Departer : A role played by an object moving away from something.
+```
+
+Properties:
+```
+hasParticipant (to be used when no specific relation exists)
+hasOccludee
+hasOccluder
+hasPenetrator
+hasPenetree
+hasSupportee
+hasSupporter
+hasTrajector
+    hasApproacher
+    hasDeparter
+```
+
+Grounding:
+"""
+
+        # Print the prompt for debugging
+        print("\n=========== PROMPT SENT TO CLAUDE ===========")
+        print(prompt)
+        print("===========================================\n")
+        
+        # Create a unique identifier for this call
+        call_id = f"claude_grounding_{int(time.time())}"
+        
+        # Ensure output directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Log the prompt to a file
+        prompt_file = os.path.join(output_dir, f"{call_id}_prompt.txt")
+        with open(prompt_file, "w") as f:
+            f.write(prompt)
+        
+        logger.info(f"Prompt saved to: {prompt_file}")
+        print(f"Prompt saved to: {prompt_file}")
+        
+        try:
+            # Check if anthropic package is available
+            try:
+                import anthropic
+                logger.info("Anthropic package is available")
+                print("Anthropic package is available")
+            except ImportError:
+                error_msg = "ERROR: Anthropic package is NOT installed. Please run: pip install anthropic"
+                logger.error(error_msg)
+                print(error_msg)
+                return graph
+            
+            # Initialize Anthropic client
+            if not api_key:
+                error_msg = "No API key provided for Anthropic"
+                logger.error(error_msg)
+                print(error_msg)
+                return graph
+                
+            client = anthropic.Anthropic(api_key=api_key)
+            
+            # Get list of models to try in order
+            models_to_try = [
+                model,
+                "claude-3-opus-20240229",
+                "claude-3-sonnet-20240229",
+                "claude-3-haiku-20240307"
+            ]
+            
+            # Try each model until one works
+            content = None
+            used_model = None
+            
+            print("\nAttempting to connect to Claude API for grounding...")
+            for current_model in models_to_try:
+                try:
+                    logger.info(f"Trying to use model: {current_model}")
+                    print(f"Trying to use model: {current_model}")
+                    
+                    # Call the API
+                    message = client.messages.create(
+                        model=current_model,
+                        max_tokens=4000,
+                        system="You are a specialized assistant that grounds complex situations with action/motion types. Respond ONLY with the new triples in Turtle format. Use EXACTLY the same entity URIs that appear in the input triples.",
+                        messages=[
+                            {"role": "user", "content": prompt}
+                        ]
+                    )
+                    
+                    if message and hasattr(message, 'content'):
+                        content = message.content[0].text
+                        used_model = current_model
+                        success_msg = f"Successfully used model: {used_model}"
+                        logger.info(success_msg)
+                        print(success_msg)
+                        
+                        # Print Claude's response in real-time
+                        print("\n=========== CLAUDE'S RESPONSE ===========")
+                        print(content)
+                        print("=========================================\n")
+                        
+                        break
                     else:
-                        grounded_graph.add((participant, DUL.hasRole, rs.Contacted))
+                        warning_msg = f"Model {current_model} returned unexpected response format"
+                        logger.warning(warning_msg)
+                        print(warning_msg)
+                        
+                except Exception as e:
+                    warning_msg = f"Failed to use model {current_model}: {e}"
+                    logger.warning(warning_msg)
+                    print(warning_msg)
+                    continue
             
-            # Check for avoidance actions
-            elif "Avoidance" in situation_str:
-                grounded_graph.add((situation, rs.requires, rs.Movement))
-                grounded_graph.add((situation, rs.requires, rs.Departure))
-                # Add roles for participants
-                for participant in participants:
-                    grounded_graph.add((participant, DUL.hasRole, rs.Departer))
+            # If no model worked, return original graph
+            if content is None:
+                error_msg = "All Claude models failed"
+                logger.error(error_msg)
+                print(error_msg)
+                return graph
             
-            # Check for risk reduction reactions
-            elif "Reduction" in situation_str:
-                grounded_graph.add((situation, rs.requires, rs.Movement))
-                grounded_graph.add((situation, rs.requires, rs.Approach))
-                # Add roles for participants
-                for participant in participants:
-                    grounded_graph.add((participant, DUL.hasRole, rs.Approacher))
+            # Save the full response to a file
+            response_file = os.path.join(output_dir, f"{call_id}_response.txt")
+            with open(response_file, "w") as f:
+                f.write(content)
+                
+            logger.info(f"Saved Claude response to: {response_file}")
+            print(f"Saved Claude response to: {response_file}")
             
-            # Check for implied future events
-            elif "Future" in situation_str:
-                grounded_graph.add((situation, rs.requires, rs.Movement))
-                # Add roles for participants
-                for participant in participants:
-                    grounded_graph.add((participant, DUL.hasRole, rs.Trajector))
-        
-        # Save the grounded graph
-        grounded_graph_path = os.path.join(output_dir, "enriched_grounded_graph.ttl")
-        grounded_graph.serialize(grounded_graph_path, format="turtle")
-        logger.info(f"Saved grounded graph to {grounded_graph_path}")
-        print(f"Saved grounded graph to {grounded_graph_path}")
-        
-        # Generate visualization
-        save_graph_visualizations(grounded_graph, "enriched_grounded_graph", output_dir)
-        
-        # Create a summary file
-        summary_file = os.path.join(output_dir, "grounding_summary.txt")
-        with open(summary_file, "w") as f:
-            f.write("===== GROUNDING ENRICHMENT SUMMARY =====\n\n")
-            f.write(f"Original text: \"{text}\"\n\n")
-            f.write(f"Processed {len(situations)} situations\n")
-            f.write(f"Added {len(grounded_graph)} new triples\n\n")
+            # Parse the response into the grounded graph
+            try:
+                # Create a temporary file with proper prefix declarations
+                temp_turtle_file = os.path.join(output_dir, f"{call_id}_temp.ttl")
+                with open(temp_turtle_file, "w") as f:
+                    # Write all necessary prefix declarations
+                    f.write("@prefix rs: <file://./log_recommender_system.owl#> .\n")
+                    f.write("@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .\n")
+                    f.write("@prefix ns3: <file://./log_enriched.owl#> .\n")
+                    f.write("@prefix kh: <file://./log.owl#> .\n")
+                    f.write("@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .\n")
+                    f.write("@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .\n")
+                    f.write("@prefix pb: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .\n")
+                    f.write("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n")
+                    f.write("@prefix owl: <http://www.w3.org/2002/07/owl#> .\n")
+                    f.write("@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n")
+                    f.write("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n")
+                    
+                    # Clean the response content
+                    cleaned_content = content.strip()
+                    cleaned_content = re.sub(r'^b[\'"]', '', cleaned_content)  # Remove b' or b" at start
+                    cleaned_content = re.sub(r'[\'"]$', '', cleaned_content)   # Remove ' or " at end
+                    cleaned_content = re.sub(r'\\n', '\n', cleaned_content)    # Convert \n to actual newlines
+                    cleaned_content = re.sub(r'\\r', '', cleaned_content)      # Remove \r
+                    cleaned_content = re.sub(r'\\t', '    ', cleaned_content)  # Convert \t to spaces
+                    cleaned_content = re.sub(r'```turtle\n?', '', cleaned_content)
+                    cleaned_content = re.sub(r'```\n?', '', cleaned_content)
+                    cleaned_content = cleaned_content.strip()
+                    
+                    # Write the cleaned content
+                    f.write(cleaned_content)
+                
+                print(f"\nCreated temporary Turtle file with proper prefixes: {temp_turtle_file}")
+                
+                # Create a new graph for the grounded triples
+                grounded_graph = Graph()
+                
+                # Bind all necessary namespaces
+                namespaces = {
+                    'rs': rs,
+                    'dul': DUL,
+                    'ns3': Namespace('file://./log_enriched.owl#'),
+                    'fred': Namespace('http://www.ontologydesignpatterns.org/ont/fred/domain.owl#'),
+                    'pblr': Namespace('https://w3id.org/framester/data/propbank-3.4.0/LocalRole/'),
+                    'pb': Namespace('https://w3id.org/framester/data/propbank-3.4.0/RoleSet/'),
+                    'kh': Namespace('file://./log.owl#'),
+                    'rdfs': RDFS,
+                    'xsd': XSD,
+                    'rdf': RDF,
+                    'owl': OWL
+                }
+                
+                for prefix, namespace in namespaces.items():
+                    grounded_graph.bind(prefix, namespace)
+                
+                # Parse the temporary file
+                print("\nParsing grounding triples from temporary file...")
+                grounded_graph.parse(temp_turtle_file, format="turtle")
+                
+                # Create a new graph that contains both the original graph and the grounded triples
+                final_graph = Graph()
+                final_graph += graph  # Add all original triples
+                final_graph += grounded_graph  # Add the new grounded triples
+                
+                # Save the final graph (original + grounded)
+                grounded_graph_path = os.path.join(output_dir, "enriched_grounded_graph.ttl")
+                final_graph.serialize(grounded_graph_path, format="turtle")
+                logger.info(f"Saved final graph (original + grounded) to {grounded_graph_path}")
+                print(f"Saved final graph (original + grounded) to {grounded_graph_path}")
+                
+                # Generate visualization
+                save_graph_visualizations(final_graph, "enriched_grounded_graph", output_dir)
+                
+                # Create a summary file
+                summary_file = os.path.join(output_dir, "grounding_summary.txt")
+                with open(summary_file, "w") as f:
+                    f.write("===== GROUNDING ENRICHMENT SUMMARY =====\n\n")
+                    f.write(f"Original text: \"{text}\"\n\n")
+                    f.write(f"Used model: {used_model}\n")
+                    f.write(f"Original graph size: {len(graph)} triples\n")
+                    f.write(f"Added {len(grounded_graph)} new triples\n")
+                    f.write(f"Final graph size: {len(final_graph)} triples\n\n")
+                    
+                    f.write("--- GROUNDING TRIPLES ---\n")
+                    for s, p, o in grounded_graph:
+                        f.write(f"{s} {p} {o}\n")
+                
+                logger.info(f"Created grounding summary at {summary_file}")
+                print(f"\nCreated grounding summary at {summary_file}")
+                
+                print("\n==================================================")
+                print(f"GROUNDING COMPLETE: Added {len(grounded_graph)} new triples to the graph")
+                print(f"Original graph size: {len(graph)} triples")
+                print(f"Final graph size: {len(final_graph)} triples")
+                print("==================================================")
+                
+                return final_graph
+                
+            except Exception as e:
+                error_msg = f"Error parsing Claude response as triples: {e}"
+                logger.error(error_msg)
+                # Log the problematic content for debugging
+                logger.error(f"Problematic content: {content[:200]}...")  # Log first 200 chars
+                print(error_msg)
+                print(f"Problematic content (first 200 chars): {content[:200]}...")
+                return graph
+                
+        except Exception as e:
+            error_msg = f"Error in grounding enrichment: {e}"
+            logger.error(error_msg)
+            print(error_msg)
+            return graph
             
-            f.write("--- GROUNDED SITUATIONS ---\n")
-            for situation, participants in situations.items():
-                f.write(f"\nSituation: {situation}\n")
-                f.write("Participants:\n")
-                for participant in participants:
-                    f.write(f"  - {participant}\n")
-                # Get the grounding triples for this situation
-                for s, p, o in grounded_graph.triples((situation, None, None)):
-                    f.write(f"  Grounding: {p} {o}\n")
-        
-        logger.info(f"Created grounding summary at {summary_file}")
-        print(f"\nCreated grounding summary at {summary_file}")
-        
-        # Merge the grounded triples with the original graph
-        graph += grounded_graph
-        
-        return graph
-        
     except Exception as e:
         error_msg = f"Error in grounding enrichment: {e}"
         logger.error(error_msg)
@@ -2001,7 +2339,7 @@ def main():
         # Grounding enrichment
         if args.ground:
             logger.info("Starting grounding enrichment")
-            enriched_graph = ground_enrichment(merged_graph, cleaned_text, output_dir=pipeline_dir)
+            enriched_graph = ground_enrichment(merged_graph, cleaned_text, args.verbalization_api_key, model="claude-3-7-sonnet-20250219", output_dir=pipeline_dir)
             logger.info("Grounding enrichment completed")
         
     except Exception as e:
